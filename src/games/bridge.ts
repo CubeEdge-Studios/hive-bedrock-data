@@ -17,8 +17,9 @@ export default {
     max_level: 20,
     canPrestige: false,
     max_prestige: null,
-    level_increment: null,
+    level_increment: 300,
     level_cap: null,
+    level_multiplier: 1.08,
 
     colours: ["#7a4b4f", "#d05548", "#1a90d6", "#0d5196", "#8f9e9e"],
 

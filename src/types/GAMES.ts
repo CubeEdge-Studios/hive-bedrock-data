@@ -49,8 +49,9 @@ export interface IGAME {
     max_level: number;
     canPrestige: boolean;
     max_prestige: number | null;
-    level_increment: number | null;
+    level_increment: number;
     level_cap: number | null;
+    level_multiplier?: number;
 
     colours: string[];
 

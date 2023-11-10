@@ -1,5 +1,5 @@
 import { GAMES } from "./games";
 
-export default {
-    GAMES,
-};
+import calculateLevelFromXP from "./math/calculateLevelFromXP";
+
+export { GAMES, calculateLevelFromXP };
