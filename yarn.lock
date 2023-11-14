@@ -47,11 +47,6 @@
   resolved "https://registry.yarnpkg.com/@tsconfig/node16/-/node16-1.0.4.tgz#0b92dcc0cc1c81f6f306a381f28e31b1a56536e9"
   integrity sha512-vxhUy4J8lyeyinH7Azl1pdd43GJhZH/tP2weN8TntQblOY+A0XbT8DJk1/oCPuOOyg/Ja757rG0CgHcWC8OfMA==
 
-"@types/is-number@^7.0.5":
-  version "7.0.5"
-  resolved "https://registry.yarnpkg.com/@types/is-number/-/is-number-7.0.5.tgz#0e5942c2754661c25237f411fe6299523b04c818"
-  integrity sha512-NGmRpXeZg9qDX+AlmBeq4Xk9ruTMj0KfzspDCxTLAcpbts2EjojAvY6A1eumKHInMwGY4xHM8ILA9CHRHfUUWA==
-
 acorn-walk@^8.1.1:
   version "8.3.0"
   resolved "https://registry.yarnpkg.com/acorn-walk/-/acorn-walk-8.3.0.tgz#2097665af50fd0cf7a2dfccd2b9368964e66540f"
