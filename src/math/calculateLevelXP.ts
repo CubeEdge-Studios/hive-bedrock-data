@@ -8,7 +8,7 @@ export default function calculateLevelXP(
 ): number | null {
     const game_data = GAMES[game_id];
     if (!game_data) return null;
-    if (level >= game_data.max_level) return null;
+    if (level > game_data.max_level) return null;
 
     const current_level_xp = calculateXPFromLevel(level - 1, game_id);
     if (current_level_xp === null) return null;
