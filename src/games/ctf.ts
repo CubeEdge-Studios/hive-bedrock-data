@@ -14,7 +14,7 @@ export default {
     description: "Capture and defend! Capture the other teams flag to score.",
     icon_url: IMAGE_CDN + "/icons/hub/games/ctf.png",
 
-    max_level: 20,
+    max_level: 50,
     canPrestige: false,
     max_prestige: null,
     level_increment: 150,
