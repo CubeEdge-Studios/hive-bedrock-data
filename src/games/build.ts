@@ -4,7 +4,7 @@ import {
     GAME_MODE_QUEUE_TYPE,
     GAME_MODE_TYPE,
     IGAME,
-} from "../types/games.types.ts";
+} from "../types/games.types";
 
 export default {
     id: GAME.JustBuild,
