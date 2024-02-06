@@ -14,6 +14,54 @@ export enum GAME {
     Gravity = "grav",
 }
 
+export interface GAME_ALT {
+    [GAME.HideAndSeek]: "HIDE";
+    [GAME.DeathRun]: "DR";
+    [GAME.TreasureWars]: "WARS";
+    [GAME.MurderMystery]: "MURDER";
+    [GAME.SurvivalGames]: "SG";
+    [GAME.Skywars]: "SKY";
+    [GAME.CaptureTheFlag]: "CTF";
+    [GAME.BlockDrop]: "DROP";
+    [GAME.GroundWars]: "GROUND";
+    [GAME.JustBuild]: "BUILD";
+    [GAME.BlockParty]: "PARTY";
+    [GAME.TheBridge]: "BRIDGE";
+    [GAME.Gravity]: "GRAV";
+}
+
+export interface GAME_NAME {
+    [GAME.HideAndSeek]: "Hide And Seek";
+    [GAME.DeathRun]: "Deathrun";
+    [GAME.TreasureWars]: "Treasure Wars";
+    [GAME.MurderMystery]: "Murder Mystery";
+    [GAME.SurvivalGames]: "Survival Games";
+    [GAME.Skywars]: "SkyWars";
+    [GAME.CaptureTheFlag]: "Capture The Flag";
+    [GAME.BlockDrop]: "Block Drop";
+    [GAME.GroundWars]: "Ground Wars";
+    [GAME.JustBuild]: "Just Build";
+    [GAME.BlockParty]: "Block Party";
+    [GAME.TheBridge]: "The Bridge";
+    [GAME.Gravity]: "Gravity";
+}
+
+export interface GAME_NAME_ALT {
+    [GAME.HideAndSeek]: "HideAndSeek";
+    [GAME.DeathRun]: "Deathrun";
+    [GAME.TreasureWars]: "TreasureWars";
+    [GAME.MurderMystery]: "MurderMystery";
+    [GAME.SurvivalGames]: "SurvivalGames";
+    [GAME.Skywars]: "SkyWars";
+    [GAME.CaptureTheFlag]: "CaptureTheFlag";
+    [GAME.BlockDrop]: "BlockDrop";
+    [GAME.GroundWars]: "GroundWars";
+    [GAME.JustBuild]: "JustBuild";
+    [GAME.BlockParty]: "BlockParty";
+    [GAME.TheBridge]: "TheBridge";
+    [GAME.Gravity]: "Gravity";
+}
+
 export enum GAME_MODE_TYPE {
     Regular = "REGULAR",
     Duos = "DUOS",
