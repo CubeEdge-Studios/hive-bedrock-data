@@ -1,5 +1,5 @@
 import { GAMES } from "../games";
-import { GAME } from "../types/GAMES";
+import { GAME } from "../types/games.types.ts";
 import calculateLevelFromXP from "./calculateLevelFromXP";
 
 export default function hasCompleted(xp: number, game_id: GAME): boolean {

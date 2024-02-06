@@ -4,7 +4,7 @@ import {
     GAME_MODE_QUEUE_TYPE,
     GAME_MODE_TYPE,
     IGAME,
-} from "../types/GAMES";
+} from "../types/games.types.ts";
 
 export default {
     id: GAME.CaptureTheFlag,

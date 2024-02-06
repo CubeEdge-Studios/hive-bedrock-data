@@ -1,5 +1,5 @@
 import { GAMES } from "../games";
-import { GAME } from "../types/GAMES";
+import { GAME } from "../types/games.types.ts";
 import calculateLevelFromXP from "./calculateLevelFromXP";
 import calculateXPFromLevel from "./calculateXPFromLevel";
 import calculateLevelXP from "./calculateLevelXP";

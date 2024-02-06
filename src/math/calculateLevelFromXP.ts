@@ -1,5 +1,5 @@
 import { GAMES } from "../games";
-import { GAME } from "../types/GAMES";
+import { GAME } from "../types/games.types.ts";
 
 export default function calculateLevelFromXP(
     xp: number,
