@@ -88,8 +88,8 @@ export interface Game_Variant {
 
 export interface Game_Data<G extends Game> {
     id: G;
-    short_name: Game_Alt[Game];
-    name: Game_Name[Game];
+    short_name: string;
+    name: string;
 
     description: string;
     icon_url: string;
