@@ -14,7 +14,7 @@ export enum MapMetadata_Season {
     Autumn = "AUTUMN",
 }
 
-// currently the same as GAME_MODE_TYPE
+// currently the same as Game_Variant_Type
 export enum MapMetadata_Variant {
     Regular = "REGULAR",
     Duos = "DUOS",

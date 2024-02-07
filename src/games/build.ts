@@ -1,13 +1,13 @@
 import { IMAGE_CDN } from ".";
 import {
-    GAME,
-    GAME_MODE_QUEUE_TYPE,
-    GAME_MODE_TYPE,
-    IGAME,
+    Game,
+    Game_Variant_Queue_Type,
+    Game_Variant_Type,
+    Game_Data,
 } from "../types/games.types";
 
 export default {
-    id: GAME.JustBuild,
+    id: Game.JustBuild,
     short_name: "BUILD",
     name: "Just Build",
 
@@ -26,39 +26,39 @@ export default {
     modes: [
         {
             id: "build",
-            type: GAME_MODE_TYPE.Regular,
+            type: Game_Variant_Type.Regular,
             name: "Solos",
             team_size: 1,
             team_amount: 12,
             limited: false,
-            queue_type: GAME_MODE_QUEUE_TYPE.Default,
+            queue_type: Game_Variant_Queue_Type.Default,
         },
         {
             id: "buildx",
-            type: GAME_MODE_TYPE.Regular,
+            type: Game_Variant_Type.Regular,
             name: "Solos (Double Build Time)",
             team_size: 1,
             team_amount: 12,
             limited: false,
-            queue_type: GAME_MODE_QUEUE_TYPE.Default,
+            queue_type: Game_Variant_Queue_Type.Default,
         },
         {
             id: "build-duos",
-            type: GAME_MODE_TYPE.Duos,
+            type: Game_Variant_Type.Duos,
             name: "Duos",
             team_size: 2,
             team_amount: 12,
             limited: false,
-            queue_type: GAME_MODE_QUEUE_TYPE.Default,
+            queue_type: Game_Variant_Queue_Type.Default,
         },
         {
             id: "build-duosx",
-            type: GAME_MODE_TYPE.Duos,
+            type: Game_Variant_Type.Duos,
             name: "Duos (Double Build Time)",
             team_size: 2,
             team_amount: 12,
             limited: false,
-            queue_type: GAME_MODE_QUEUE_TYPE.Default,
+            queue_type: Game_Variant_Queue_Type.Default,
         },
     ],
-} as IGAME;
+} as Game_Data;

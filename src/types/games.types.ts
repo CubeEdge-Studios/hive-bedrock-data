@@ -1,4 +1,4 @@
-export enum GAME {
+export enum Game {
     HideAndSeek = "hide",
     DeathRun = "dr",
     TreasureWars = "wars",
@@ -14,55 +14,55 @@ export enum GAME {
     Gravity = "grav",
 }
 
-export interface GAME_ALT {
-    [GAME.HideAndSeek]: "HIDE";
-    [GAME.DeathRun]: "DR";
-    [GAME.TreasureWars]: "WARS";
-    [GAME.MurderMystery]: "MURDER";
-    [GAME.SurvivalGames]: "SG";
-    [GAME.Skywars]: "SKY";
-    [GAME.CaptureTheFlag]: "CTF";
-    [GAME.BlockDrop]: "DROP";
-    [GAME.GroundWars]: "GROUND";
-    [GAME.JustBuild]: "BUILD";
-    [GAME.BlockParty]: "PARTY";
-    [GAME.TheBridge]: "BRIDGE";
-    [GAME.Gravity]: "GRAV";
+export interface Game_Alt {
+    [Game.HideAndSeek]: "HIDE";
+    [Game.DeathRun]: "DR";
+    [Game.TreasureWars]: "WARS";
+    [Game.MurderMystery]: "MURDER";
+    [Game.SurvivalGames]: "SG";
+    [Game.Skywars]: "SKY";
+    [Game.CaptureTheFlag]: "CTF";
+    [Game.BlockDrop]: "DROP";
+    [Game.GroundWars]: "GROUND";
+    [Game.JustBuild]: "BUILD";
+    [Game.BlockParty]: "PARTY";
+    [Game.TheBridge]: "BRIDGE";
+    [Game.Gravity]: "GRAV";
 }
 
-export interface GAME_NAME {
-    [GAME.HideAndSeek]: "Hide And Seek";
-    [GAME.DeathRun]: "Deathrun";
-    [GAME.TreasureWars]: "Treasure Wars";
-    [GAME.MurderMystery]: "Murder Mystery";
-    [GAME.SurvivalGames]: "Survival Games";
-    [GAME.Skywars]: "SkyWars";
-    [GAME.CaptureTheFlag]: "Capture The Flag";
-    [GAME.BlockDrop]: "Block Drop";
-    [GAME.GroundWars]: "Ground Wars";
-    [GAME.JustBuild]: "Just Build";
-    [GAME.BlockParty]: "Block Party";
-    [GAME.TheBridge]: "The Bridge";
-    [GAME.Gravity]: "Gravity";
+export interface Game_Name {
+    [Game.HideAndSeek]: "Hide And Seek";
+    [Game.DeathRun]: "Deathrun";
+    [Game.TreasureWars]: "Treasure Wars";
+    [Game.MurderMystery]: "Murder Mystery";
+    [Game.SurvivalGames]: "Survival Games";
+    [Game.Skywars]: "SkyWars";
+    [Game.CaptureTheFlag]: "Capture The Flag";
+    [Game.BlockDrop]: "Block Drop";
+    [Game.GroundWars]: "Ground Wars";
+    [Game.JustBuild]: "Just Build";
+    [Game.BlockParty]: "Block Party";
+    [Game.TheBridge]: "The Bridge";
+    [Game.Gravity]: "Gravity";
 }
 
-export interface GAME_NAME_ALT {
-    [GAME.HideAndSeek]: "HideAndSeek";
-    [GAME.DeathRun]: "Deathrun";
-    [GAME.TreasureWars]: "TreasureWars";
-    [GAME.MurderMystery]: "MurderMystery";
-    [GAME.SurvivalGames]: "SurvivalGames";
-    [GAME.Skywars]: "SkyWars";
-    [GAME.CaptureTheFlag]: "CaptureTheFlag";
-    [GAME.BlockDrop]: "BlockDrop";
-    [GAME.GroundWars]: "GroundWars";
-    [GAME.JustBuild]: "JustBuild";
-    [GAME.BlockParty]: "BlockParty";
-    [GAME.TheBridge]: "TheBridge";
-    [GAME.Gravity]: "Gravity";
+export interface Game_Name_Alt {
+    [Game.HideAndSeek]: "HideAndSeek";
+    [Game.DeathRun]: "Deathrun";
+    [Game.TreasureWars]: "TreasureWars";
+    [Game.MurderMystery]: "MurderMystery";
+    [Game.SurvivalGames]: "SurvivalGames";
+    [Game.Skywars]: "SkyWars";
+    [Game.CaptureTheFlag]: "CaptureTheFlag";
+    [Game.BlockDrop]: "BlockDrop";
+    [Game.GroundWars]: "GroundWars";
+    [Game.JustBuild]: "JustBuild";
+    [Game.BlockParty]: "BlockParty";
+    [Game.TheBridge]: "TheBridge";
+    [Game.Gravity]: "Gravity";
 }
 
-export enum GAME_MODE_TYPE {
+export enum Game_Variant_Type {
     Regular = "REGULAR",
     Duos = "DUOS",
     Trios = "TRIOS",
@@ -71,23 +71,23 @@ export enum GAME_MODE_TYPE {
     Royale = "ROYALE",
 }
 
-export enum GAME_MODE_QUEUE_TYPE {
+export enum Game_Variant_Queue_Type {
     Default = "DEFAULT",
     SkillBased = "SKILL",
 }
 
-export interface IGAME_MODE {
+export interface Game_Variant {
     id: string;
-    type: GAME_MODE_TYPE;
+    type: Game_Variant_Type;
     name: string;
     team_size: number;
     team_amount: number;
     limited: boolean;
-    queue_type: GAME_MODE_QUEUE_TYPE;
+    queue_type: Game_Variant_Queue_Type;
 }
 
-export interface IGAME {
-    id: GAME;
+export interface Game_Data {
+    id: Game;
     short_name: string;
     name: string;
 
@@ -103,5 +103,5 @@ export interface IGAME {
 
     colours: string[];
 
-    modes: IGAME_MODE[];
+    modes: Game_Variant[];
 }

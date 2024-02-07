@@ -1,9 +1,9 @@
-import { GAMES } from "../games";
-import { GAME } from "../types/games.types";
+import { Games } from "../games";
+import { Game } from "../types/games.types";
 import calculateLevelFromXP from "./calculateLevelFromXP";
 
-export default function hasCompleted(xp: number, game_id: GAME): boolean {
-    const game_data = GAMES[game_id];
+export default function hasCompleted(xp: number, game_id: Game): boolean {
+    const game_data = Games[game_id];
     if (!game_data) return false;
 
     const level = calculateLevelFromXP(xp, game_id);

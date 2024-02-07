@@ -1,15 +1,15 @@
-import { GAMES } from "../games";
-import { GAME } from "../types/games.types";
+import { Games } from "../games";
+import { Game } from "../types/games.types";
 
 export default function calculateLevelFromXP(
     xp: number,
-    game_id: GAME
+    game_id: Game
 ): number | null {
-    const game_data = GAMES[game_id];
+    const game_data = Games[game_id];
     if (!game_data) return null;
 
     // Bridge uses a different xp-level system to the other games
-    if (game_data.id === GAME.TheBridge) {
+    if (game_data.id === Game.TheBridge) {
         // These values shouldn't change as only bridge uses this level system
         let max_level = game_data.max_level;
         let level_multiplier = game_data.level_multiplier ?? 1.08;

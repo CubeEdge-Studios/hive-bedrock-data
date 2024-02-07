@@ -1,14 +1,14 @@
-import { GAMES } from "../games";
-import { GAME } from "../types/games.types";
+import { Games } from "../games";
+import { Game } from "../types/games.types";
 import calculateLevelFromXP from "./calculateLevelFromXP";
 import calculateXPFromLevel from "./calculateXPFromLevel";
 import calculateLevelXP from "./calculateLevelXP";
 
 export default function calculateLevelPercentageComplete(
     xp: number,
-    game_id: GAME
+    game_id: Game
 ): number {
-    const game_data = GAMES[game_id];
+    const game_data = Games[game_id];
     if (!game_data) return 0;
 
     const current_level = calculateLevelFromXP(xp, game_id);

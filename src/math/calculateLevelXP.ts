@@ -1,12 +1,12 @@
-import { GAMES } from "../games";
-import { GAME } from "../types/games.types";
+import { Games } from "../games";
+import { Game } from "../types/games.types";
 import calculateXPFromLevel from "./calculateXPFromLevel";
 
 export default function calculateLevelXP(
     level: number,
-    game_id: GAME
+    game_id: Game
 ): number | null {
-    const game_data = GAMES[game_id];
+    const game_data = Games[game_id];
     if (!game_data) return null;
     if (level > game_data.max_level) return null;
 

@@ -1,13 +1,13 @@
 import { IMAGE_CDN } from ".";
 import {
-    GAME,
-    GAME_MODE_QUEUE_TYPE,
-    GAME_MODE_TYPE,
-    IGAME,
+    Game,
+    Game_Variant_Queue_Type,
+    Game_Variant_Type,
+    Game_Data,
 } from "../types/games.types";
 
 export default {
-    id: GAME.DeathRun,
+    id: Game.DeathRun,
     short_name: "DR",
     name: "Deathrun",
 
@@ -26,12 +26,12 @@ export default {
     modes: [
         {
             id: "dr",
-            type: GAME_MODE_TYPE.Regular,
+            type: Game_Variant_Type.Regular,
             name: "Regular",
             team_size: 20,
             team_amount: 1,
             limited: false,
-            queue_type: GAME_MODE_QUEUE_TYPE.Default,
+            queue_type: Game_Variant_Queue_Type.Default,
         },
     ],
-} as IGAME;
+} as Game_Data;

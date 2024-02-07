@@ -1,13 +1,13 @@
 import { IMAGE_CDN } from ".";
 import {
-    GAME,
-    GAME_MODE_QUEUE_TYPE,
-    GAME_MODE_TYPE,
-    IGAME,
+    Game,
+    Game_Variant_Queue_Type,
+    Game_Variant_Type,
+    Game_Data,
 } from "../types/games.types";
 
 export default {
-    id: GAME.TheBridge,
+    id: Game.TheBridge,
     short_name: "BRIDGE",
     name: "The Bridge",
 
@@ -26,21 +26,21 @@ export default {
     modes: [
         {
             id: "bridge",
-            type: GAME_MODE_TYPE.Regular,
+            type: Game_Variant_Type.Regular,
             name: "Solos",
             team_size: 1,
             team_amount: 2,
             limited: false,
-            queue_type: GAME_MODE_QUEUE_TYPE.SkillBased,
+            queue_type: Game_Variant_Queue_Type.SkillBased,
         },
         {
             id: "bridge-duos",
-            type: GAME_MODE_TYPE.Duos,
+            type: Game_Variant_Type.Duos,
             name: "Duos",
             team_size: 2,
             team_amount: 2,
             limited: false,
-            queue_type: GAME_MODE_QUEUE_TYPE.Default,
+            queue_type: Game_Variant_Queue_Type.Default,
         },
     ],
-} as IGAME;
+} as Game_Data;

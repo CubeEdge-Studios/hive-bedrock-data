@@ -22,6 +22,12 @@ import {
     Route_SpecificMonthlyStatistics,
     Path_SpecificMonthlyStatistics,
 } from "./specific_monthly_statistics.types";
+import { Route_GameMaps, Path_GameMaps } from "./game_maps.types";
+import { Route_GameMetadata, Path_GameMetadata } from "./game_metadata.types";
+import {
+    Route_GlobalStatistics,
+    Path_GlobalStatistics,
+} from "./global_statistics.types";
 
 export {
     Route_AllTimeLeaderboard,
@@ -36,4 +42,10 @@ export {
     Path_SpecificMonthlyLeaderboard,
     Route_SpecificMonthlyStatistics,
     Path_SpecificMonthlyStatistics,
+    Route_GameMaps,
+    Path_GameMaps,
+    Route_GameMetadata,
+    Path_GameMetadata,
+    Route_GlobalStatistics,
+    Path_GlobalStatistics,
 };
