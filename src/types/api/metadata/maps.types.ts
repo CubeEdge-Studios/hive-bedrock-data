@@ -1,3 +1,5 @@
+import { Game } from "../../games.types";
+
 export interface MapMetadata {
     name: string;
     season: MapMetadata_Season;

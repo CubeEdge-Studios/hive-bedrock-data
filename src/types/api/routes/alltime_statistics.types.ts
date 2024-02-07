@@ -7,7 +7,7 @@ export type Path_AllTimeStatistics<
 > = `/game/all/${G}/${P}`;
 export type Route_AllTimeStatistics<G extends Game | "all" | "main"> =
     G extends Game
-        ? AllTimeStatistics[G]
+        ? AllTimeStatistics[G] | []
         : G extends "all"
         ? Route_AllTimeStatistics_All
         : G extends "main"
@@ -15,5 +15,5 @@ export type Route_AllTimeStatistics<G extends Game | "all" | "main"> =
         : unknown;
 
 export type Route_AllTimeStatistics_All = {
-    [key in Game]: AllTimeStatistics[key];
+    [key in Game]: AllTimeStatistics[key] | [];
 } & PlayerMetadata_Nested;

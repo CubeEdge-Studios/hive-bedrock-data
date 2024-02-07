@@ -61,4 +61,4 @@ export default {
             queue_type: Game_Variant_Queue_Type.Default,
         },
     ],
-} as Game_Data;
+} as Game_Data<Game.JustBuild>;

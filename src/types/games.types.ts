@@ -86,10 +86,10 @@ export interface Game_Variant {
     queue_type: Game_Variant_Queue_Type;
 }
 
-export interface Game_Data {
-    id: Game;
-    short_name: string;
-    name: string;
+export interface Game_Data<G extends Game> {
+    id: G;
+    short_name: Game_Alt[Game];
+    name: Game_Name[Game];
 
     description: string;
     icon_url: string;
