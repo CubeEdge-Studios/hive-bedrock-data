@@ -16,7 +16,7 @@ export default {
     icon_url: IMAGE_CDN + "/icons/hub/games/dr.png",
 
     max_level: 75,
-    canPrestige: false,
+    can_prestige: false,
     max_prestige: null,
     level_increment: 200,
     level_cap: 42,

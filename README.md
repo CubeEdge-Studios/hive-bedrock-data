@@ -18,7 +18,7 @@ Games[Game.TheBridge] = {
     icon_url: IMAGE_CDN + "/icons/hub/games/bridge.png",
 
     max_level: 20,
-    canPrestige: false,
+    can_prestige: false,
     max_prestige: null,
     level_increment: 300,
     level_cap: null,

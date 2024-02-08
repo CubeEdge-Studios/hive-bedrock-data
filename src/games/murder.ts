@@ -16,7 +16,7 @@ export default {
     icon_url: IMAGE_CDN + "/icons/hub/games/murder.png",
 
     max_level: 100,
-    canPrestige: true,
+    can_prestige: true,
     max_prestige: 5,
     level_increment: 100,
     level_cap: 82,

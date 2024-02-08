@@ -16,7 +16,7 @@ export default {
     icon_url: IMAGE_CDN + "/icons/hub/games/grav.png",
 
     max_level: 25,
-    canPrestige: false,
+    can_prestige: false,
     max_prestige: null,
     level_increment: 150,
     level_cap: null,

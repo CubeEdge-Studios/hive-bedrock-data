@@ -95,7 +95,7 @@ export interface Game_Data<G extends Game> {
     icon_url: string;
 
     max_level: number;
-    canPrestige: boolean;
+    can_prestige: boolean;
     max_prestige: number | null;
     level_increment: number;
     level_cap: number | null;
