@@ -77,30 +77,6 @@ function hasCompleted(xp: number, game_id: Game): boolean;
 
 This repo has type definitions for the different routes on the public api.
 
-### Routes
-
-Types for an successfull response from the API.
-
--   Route_AllTimeLeaderboard\<Game>
--   Route_AllTimeStatistics\<Game>
--   Route_MonthlyLeaderboard\<Game>
--   Route_MonthlyStatistics\<Game>
--   Route_SpecificMonthlyLeaderboard\<Game>
--   Route_SpecificMonthlyStatistics\<Game>
--   Route_GameMaps\<Game>
--   Route_GameMetadata\<Game>
--   Route_GlobalStatistics
-
-### Paths
-
-Types for the pathname used for each route.
-
--   Path_AllTimeLeaderboard\<Game>
--   Path_AllTimeStatistics\<Game, played_id>
--   Path_MonthlyLeaderboard\<Game>
--   Path_MonthlyStatistics\<Game, played_id>
--   Path_SpecificMonthlyLeaderboard\<Game, year, month, amount, skip>
--   Path_SpecificMonthlyStatistics\<Game, played_id, year, month>
--   Path_GameMaps\<Game>
--   Path_GameMetadata\<Game>
--   Path_GlobalStatistics
+```ts
+Routes<"/game/all/sky"> = Response_AllTimeLeaderboard<Game.SkyWars>;
+```
