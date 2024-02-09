@@ -1,3 +1,4 @@
+import { Timeframe } from "../../enums";
 import {
     AllTimeLeaderboard,
     AllTimeStatistics,
@@ -16,7 +17,14 @@ interface Statistics_SG {
     crates: number;
 }
 
-export type AllTimeStatistics_SG = AllTimeStatistics & Statistics_SG;
-export type MonthlyStatistics_SG = MonthlyStatistics & Statistics_SG;
-export type AllTimeLeaderboard_SG = AllTimeLeaderboard & Statistics_SG;
-export type MonthlyLeaderboard_SG = MonthlyLeaderboard & Statistics_SG;
+interface StatisticVariants {
+    [Timeframe.AllTime]: Statistics_SG & AllTimeStatistics;
+    [Timeframe.Monthly]: Statistics_SG & MonthlyStatistics;
+}
+export type SgStatistics<T extends Timeframe> = StatisticVariants[T];
+
+interface LeaderboardVariants {
+    [Timeframe.AllTime]: Statistics_SG & AllTimeLeaderboard;
+    [Timeframe.Monthly]: Statistics_SG & MonthlyLeaderboard;
+}
+export type SgLeaderboard<T extends Timeframe> = LeaderboardVariants[T];

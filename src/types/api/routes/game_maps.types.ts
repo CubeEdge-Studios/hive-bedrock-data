@@ -1,5 +1,8 @@
 import { Game } from "../../games.types";
 import { MapMetadata } from "../api.types";
 
-export type Path_GameMaps<G extends Game> = `/game/map/${G}`;
-export type Route_GameMaps = MapMetadata[];
+export type Response_GameMaps = MapMetadata[];
+
+export type Route_GameMaps<T extends string> = T extends `/game/map/${Game}`
+    ? Response_GameMaps
+    : never;

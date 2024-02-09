@@ -1,5 +1,8 @@
 import { Game } from "../../games.types";
 import { GameMetadata } from "../api.types";
 
-export type Path_GameMetadata<G extends Game> = `/game/meta/${G}`;
-export type Route_GameMetadata<G extends Game> = GameMetadata<G>;
+export type Response_GameMetdata = GameMetadata;
+
+export type Route_GameMetdata<T extends string> = T extends `/game/meta/${Game}`
+    ? Response_GameMetdata
+    : never;

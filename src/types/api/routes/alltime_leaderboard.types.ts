@@ -1,5 +1,15 @@
+import { Timeframe } from "../../enums";
 import { Game } from "../../games.types";
-import { AllTimeLeaderboard } from "../api.types";
+import { Leaderboards } from "../api.types";
 
-export type Path_AllTimeLeaderboard<G extends Game> = `/game/all/${G}`;
-export type Route_AllTimeLeaderboard<G extends Game> = AllTimeLeaderboard[G][];
+export type Response_AllTimeLeaderboard<G extends Game> = Leaderboards<
+    G,
+    Timeframe.AllTime
+>[];
+
+export type Route_AllTimeLeaderboard<T extends string> =
+    T extends `/game/all/${infer G}`
+        ? G extends Game
+            ? Response_AllTimeLeaderboard<G>
+            : never
+        : never;

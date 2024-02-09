@@ -1,8 +1,6 @@
-import { Game, Game_Alt, Game_Name_Alt } from "../../games.types";
-
-export interface GameMetadata<G extends Game> {
-    name: Game_Name_Alt[G];
-    shortName: Game_Alt[G];
+export interface GameMetadata {
+    name: string;
+    shortName: string;
     maxLevel: number;
     allowPrestiging: boolean;
     maxPrestige: number;

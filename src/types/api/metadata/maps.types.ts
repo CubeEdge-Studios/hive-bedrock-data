@@ -1,27 +1,8 @@
-import { Game } from "../../games.types";
+import { MapSeason, MapVariant } from "../../enums";
 
 export interface MapMetadata {
     name: string;
-    season: MapMetadata_Season;
-    variant: MapMetadata_Variant;
+    season: MapSeason;
+    variant: MapVariant;
     image: string;
-}
-
-export enum MapMetadata_Season {
-    None = "NO_SEASON",
-    Winter = "WINTERFEST",
-    Spring = "SPRING",
-    Summer = "SUMMER",
-    Halloween = "HALLOWEEN",
-    Autumn = "AUTUMN",
-}
-
-// currently the same as Game_Variant_Type
-export enum MapMetadata_Variant {
-    Regular = "REGULAR",
-    Duos = "DUOS",
-    Trios = "TRIOS",
-    Squads = "SQUADS",
-    Mega = "MEGA",
-    Royale = "ROYALE",
 }

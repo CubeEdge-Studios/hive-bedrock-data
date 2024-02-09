@@ -1,3 +1,4 @@
+import { Timeframe } from "../../enums";
 import {
     AllTimeLeaderboard,
     AllTimeStatistics,
@@ -16,7 +17,14 @@ interface Statistics_BUILD {
     rating_love_recieved: number;
 }
 
-export type AllTimeStatistics_BUILD = AllTimeStatistics & Statistics_BUILD;
-export type MonthlyStatistics_BUILD = MonthlyStatistics & Statistics_BUILD;
-export type AllTimeLeaderboard_BUILD = AllTimeLeaderboard & Statistics_BUILD;
-export type MonthlyLeaderboard_BUILD = MonthlyLeaderboard & Statistics_BUILD;
+interface StatisticVariants {
+    [Timeframe.AllTime]: Statistics_BUILD & AllTimeStatistics;
+    [Timeframe.Monthly]: Statistics_BUILD & MonthlyStatistics;
+}
+export type BuildStatistics<T extends Timeframe> = StatisticVariants[T];
+
+interface LeaderboardVariants {
+    [Timeframe.AllTime]: Statistics_BUILD & AllTimeLeaderboard;
+    [Timeframe.Monthly]: Statistics_BUILD & MonthlyLeaderboard;
+}
+export type BuildLeaderboard<T extends Timeframe> = LeaderboardVariants[T];

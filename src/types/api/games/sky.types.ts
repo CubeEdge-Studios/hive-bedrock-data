@@ -1,3 +1,4 @@
+import { Timeframe } from "../../enums";
 import {
     AllTimeLeaderboard,
     AllTimeStatistics,
@@ -16,7 +17,14 @@ interface Statistics_SKY {
     spells_used: number;
 }
 
-export type AllTimeStatistics_SKY = AllTimeStatistics & Statistics_SKY;
-export type MonthlyStatistics_SKY = MonthlyStatistics & Statistics_SKY;
-export type AllTimeLeaderboard_SKY = AllTimeLeaderboard & Statistics_SKY;
-export type MonthlyLeaderboard_SKY = MonthlyLeaderboard & Statistics_SKY;
+interface StatisticVariants {
+    [Timeframe.AllTime]: Statistics_SKY & AllTimeStatistics;
+    [Timeframe.Monthly]: Statistics_SKY & MonthlyStatistics;
+}
+export type SkyStatistics<T extends Timeframe> = StatisticVariants[T];
+
+interface LeaderboardVariants {
+    [Timeframe.AllTime]: Statistics_SKY & AllTimeLeaderboard;
+    [Timeframe.Monthly]: Statistics_SKY & MonthlyLeaderboard;
+}
+export type SkyLeaderboard<T extends Timeframe> = LeaderboardVariants[T];

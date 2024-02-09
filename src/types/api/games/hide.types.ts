@@ -1,3 +1,4 @@
+import { Timeframe } from "../../enums";
 import {
     AllTimeLeaderboard,
     AllTimeStatistics,
@@ -14,7 +15,14 @@ interface Statistics_HIDE {
     seeker_kills: number;
 }
 
-export type AllTimeStatistics_HIDE = AllTimeStatistics & Statistics_HIDE;
-export type MonthlyStatistics_HIDE = MonthlyStatistics & Statistics_HIDE;
-export type AllTimeLeaderboard_HIDE = AllTimeLeaderboard & Statistics_HIDE;
-export type MonthlyLeaderboard_HIDE = MonthlyLeaderboard & Statistics_HIDE;
+interface StatisticVariants {
+    [Timeframe.AllTime]: Statistics_HIDE & AllTimeStatistics;
+    [Timeframe.Monthly]: Statistics_HIDE & MonthlyStatistics;
+}
+export type HideStatistics<T extends Timeframe> = StatisticVariants[T];
+
+interface LeaderboardVariants {
+    [Timeframe.AllTime]: Statistics_HIDE & AllTimeLeaderboard;
+    [Timeframe.Monthly]: Statistics_HIDE & MonthlyLeaderboard;
+}
+export type HideLeaderboard<T extends Timeframe> = LeaderboardVariants[T];

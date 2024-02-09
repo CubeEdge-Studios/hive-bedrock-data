@@ -1,3 +1,4 @@
+import { Timeframe } from "../../enums";
 import {
     AllTimeLeaderboard,
     AllTimeStatistics,
@@ -23,7 +24,14 @@ interface StatisticsAlt_BRIDGE {
     m_solo_goals: number;
 }
 
-export type AllTimeStatistics_BRIDGE = AllTimeStatistics & Statistics_BRIDGE;
-export type MonthlyStatistics_BRIDGE = MonthlyStatistics & StatisticsAlt_BRIDGE;
-export type AllTimeLeaderboard_BRIDGE = AllTimeLeaderboard & Statistics_BRIDGE;
-export type MonthlyLeaderboard_BRIDGE = MonthlyLeaderboard & Statistics_BRIDGE;
+interface StatisticVariants {
+    [Timeframe.AllTime]: Statistics_BRIDGE & AllTimeStatistics;
+    [Timeframe.Monthly]: StatisticsAlt_BRIDGE & MonthlyStatistics;
+}
+export type BridgeStatistics<T extends Timeframe> = StatisticVariants[T];
+
+interface LeaderboardVariants {
+    [Timeframe.AllTime]: Statistics_BRIDGE & AllTimeLeaderboard;
+    [Timeframe.Monthly]: Statistics_BRIDGE & MonthlyLeaderboard;
+}
+export type BridgeLeaderboard<T extends Timeframe> = LeaderboardVariants[T];

@@ -1,3 +1,4 @@
+import { Timeframe } from "../../enums";
 import {
     AllTimeLeaderboard,
     AllTimeStatistics,
@@ -15,7 +16,14 @@ interface Statistics_DROP {
     vaults_used: number;
 }
 
-export type AllTimeStatistics_DROP = AllTimeStatistics & Statistics_DROP;
-export type MonthlyStatistics_DROP = MonthlyStatistics & Statistics_DROP;
-export type AllTimeLeaderboard_DROP = AllTimeLeaderboard & Statistics_DROP;
-export type MonthlyLeaderboard_DROP = MonthlyLeaderboard & Statistics_DROP;
+interface StatisticVariants {
+    [Timeframe.AllTime]: Statistics_DROP & AllTimeStatistics;
+    [Timeframe.Monthly]: Statistics_DROP & MonthlyStatistics;
+}
+export type DropStatistics<T extends Timeframe> = StatisticVariants[T];
+
+interface LeaderboardVariants {
+    [Timeframe.AllTime]: Statistics_DROP & AllTimeLeaderboard;
+    [Timeframe.Monthly]: Statistics_DROP & MonthlyLeaderboard;
+}
+export type DropLeaderboard<T extends Timeframe> = LeaderboardVariants[T];

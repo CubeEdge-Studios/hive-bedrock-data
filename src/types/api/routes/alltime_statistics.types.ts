@@ -1,19 +1,23 @@
+import { Timeframe } from "../../enums";
 import { Game } from "../../games.types";
-import { AllTimeStatistics, PlayerMetadata_Nested } from "../api.types";
+import { PlayerMetadata_Nested, Statistics } from "../api.types";
 
-export type Path_AllTimeStatistics<
-    G extends Game | "all" | "main",
-    P extends string
-> = `/game/all/${G}/${P}`;
-export type Route_AllTimeStatistics<G extends Game | "all" | "main"> =
+export type Response_AllTimeStatistics<G extends Game | "all" | "main"> =
     G extends Game
-        ? AllTimeStatistics[G] | []
+        ? Statistics<G, Timeframe.AllTime>
         : G extends "all"
-        ? Route_AllTimeStatistics_All
+        ? Response_AllTimeStatistics_All
         : G extends "main"
         ? PlayerMetadata_Nested
-        : unknown;
+        : never;
 
-export type Route_AllTimeStatistics_All = {
-    [key in Game]: AllTimeStatistics[key] | [];
+export type Route_AllTimeStatistics<T extends string> =
+    T extends `/game/all/${infer G}/${string}`
+        ? G extends Game | "all" | "main"
+            ? Response_AllTimeStatistics<G>
+            : never
+        : never;
+
+type Response_AllTimeStatistics_All = {
+    [key in Game]: Statistics<key, Timeframe.AllTime> | [];
 } & PlayerMetadata_Nested;

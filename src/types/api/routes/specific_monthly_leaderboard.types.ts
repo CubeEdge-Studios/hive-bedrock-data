@@ -1,12 +1,15 @@
+import { Timeframe } from "../../enums";
 import { Game } from "../../games.types";
-import { MonthlyLeaderboard } from "../api.types";
+import { Leaderboards } from "../api.types";
 
-export type Path_SpecificMonthlyLeaderboard<
-    G extends Game,
-    Y extends number,
-    M extends number,
-    A extends number,
-    S extends number
-> = `/game/monthly/${G}/${Y}/${M}/${A}/${S}`;
-export type Route_SpecificMonthlyLeaderboard<G extends Game> =
-    MonthlyLeaderboard[G][];
+export type Response_SpecificMonthlyLeaderboard<G extends Game> = Leaderboards<
+    G,
+    Timeframe.Monthly
+>[];
+
+export type Route_SpecificMonthlyLeaderboard<T extends string> =
+    T extends `/game/monthly/${infer G}/${number}/${number}/${number}/${number}`
+        ? G extends Game
+            ? Response_SpecificMonthlyLeaderboard<G>
+            : never
+        : never;

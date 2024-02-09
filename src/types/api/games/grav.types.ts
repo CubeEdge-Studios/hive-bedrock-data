@@ -1,3 +1,4 @@
+import { Timeframe } from "../../enums";
 import {
     AllTimeLeaderboard,
     AllTimeStatistics,
@@ -14,7 +15,14 @@ interface Statistics_GRAV {
     maps_completed_without_dying: number;
 }
 
-export type AllTimeStatistics_GRAV = AllTimeStatistics & Statistics_GRAV;
-export type MonthlyStatistics_GRAV = MonthlyStatistics & Statistics_GRAV;
-export type AllTimeLeaderboard_GRAV = AllTimeLeaderboard & Statistics_GRAV;
-export type MonthlyLeaderboard_GRAV = MonthlyLeaderboard & Statistics_GRAV;
+interface StatisticVariants {
+    [Timeframe.AllTime]: Statistics_GRAV & AllTimeStatistics;
+    [Timeframe.Monthly]: Statistics_GRAV & MonthlyStatistics;
+}
+export type GravStatistics<T extends Timeframe> = StatisticVariants[T];
+
+interface LeaderboardVariants {
+    [Timeframe.AllTime]: Statistics_GRAV & AllTimeLeaderboard;
+    [Timeframe.Monthly]: Statistics_GRAV & MonthlyLeaderboard;
+}
+export type GravLeaderboard<T extends Timeframe> = LeaderboardVariants[T];

@@ -1,10 +1,12 @@
+import { PlayerRank } from "../../enums";
+
 export interface PlayerMetadata {
     UUID: string;
     xuid: number;
 
     username: string;
     username_cc: string;
-    rank: PlayerMetadata_Rank;
+    rank: PlayerRank;
 
     first_played: number;
     daily_login_streak?: number;
@@ -38,19 +40,4 @@ export interface PlayerMetadata_Nested {
 export interface PlayerMetadata_Avatar {
     url: string;
     name: string;
-}
-
-export enum PlayerMetadata_Rank {
-    Regular = "REGULAR",
-    Plus = "PLUS",
-    Youtuber = "YOUTUBER",
-    Streamer = "STREAMER",
-    Tiktok = "TIKTOK",
-    VIP = "VIP",
-    Helper = "HELPER",
-    Moderator = "MODERATOR",
-    Hive = "HIVE_TEAM",
-    StaffManager = "STAFF_MANAGER",
-    CommunityManager = "COMMUNITY_MANAGER",
-    Owner = "OWNER",
 }

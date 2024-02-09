@@ -1,3 +1,4 @@
+import { Timeframe } from "../../enums";
 import {
     AllTimeLeaderboard,
     AllTimeStatistics,
@@ -15,7 +16,14 @@ interface Statistics_MURDER {
     murderer_eliminations: number;
 }
 
-export type AllTimeStatistics_MURDER = AllTimeStatistics & Statistics_MURDER;
-export type MonthlyStatistics_MURDER = MonthlyStatistics & Statistics_MURDER;
-export type AllTimeLeaderboard_MURDER = AllTimeLeaderboard & Statistics_MURDER;
-export type MonthlyLeaderboard_MURDER = MonthlyLeaderboard & Statistics_MURDER;
+interface StatisticVariants {
+    [Timeframe.AllTime]: Statistics_MURDER & AllTimeStatistics;
+    [Timeframe.Monthly]: Statistics_MURDER & MonthlyStatistics;
+}
+export type MurderStatistics<T extends Timeframe> = StatisticVariants[T];
+
+interface LeaderboardVariants {
+    [Timeframe.AllTime]: Statistics_MURDER & AllTimeLeaderboard;
+    [Timeframe.Monthly]: Statistics_MURDER & MonthlyLeaderboard;
+}
+export type MurderLeaderboard<T extends Timeframe> = LeaderboardVariants[T];

@@ -1,17 +1,21 @@
+import { Timeframe } from "../../enums";
 import { Game } from "../../games.types";
-import { MonthlyStatistics } from "../api.types";
+import { Statistics } from "../api.types";
 import { MonthlyStatistics as MonthlyStatisticsBase } from "../games/default.types";
 
-export type Path_MonthlyStatistics<
-    G extends Game | "all",
-    P extends string
-> = `/game/monthly/player/${G}/${P}`;
-export type Route_MonthlyStatistics<G extends Game | "all"> = G extends Game
-    ? MonthlyStatistics[G]
+export type Response_MonthlyStatistics<G extends Game | "all"> = G extends Game
+    ? Statistics<G, Timeframe.Monthly>
     : G extends "all"
-    ? Route_MonthlyStatistics_All
-    : unknown;
+    ? Response_MonthlyStatistics_All
+    : never;
 
-export type Route_MonthlyStatistics_All = {
-    [key in Game]: MonthlyStatistics[key] | MonthlyStatisticsBase;
+export type Route_MonthlyStatistics<T extends string> =
+    T extends `/game/monthly/${infer G}/${string}`
+        ? G extends Game | "all"
+            ? Response_MonthlyStatistics<G>
+            : never
+        : never;
+
+type Response_MonthlyStatistics_All = {
+    [key in Game]: Statistics<key, Timeframe.Monthly> | MonthlyStatisticsBase;
 };

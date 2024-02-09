@@ -1,3 +1,4 @@
+import { Timeframe } from "../../enums";
 import {
     AllTimeLeaderboard,
     AllTimeStatistics,
@@ -16,7 +17,14 @@ interface Statistics_CTF {
     flags_returned: number;
 }
 
-export type AllTimeStatistics_CTF = AllTimeStatistics & Statistics_CTF;
-export type MonthlyStatistics_CTF = MonthlyStatistics & Statistics_CTF;
-export type AllTimeLeaderboard_CTF = AllTimeLeaderboard & Statistics_CTF;
-export type MonthlyLeaderboard_CTF = MonthlyLeaderboard & Statistics_CTF;
+interface StatisticVariants {
+    [Timeframe.AllTime]: Statistics_CTF & AllTimeStatistics;
+    [Timeframe.Monthly]: Statistics_CTF & MonthlyStatistics;
+}
+export type CtfStatistics<T extends Timeframe> = StatisticVariants[T];
+
+interface LeaderboardVariants {
+    [Timeframe.AllTime]: Statistics_CTF & AllTimeLeaderboard;
+    [Timeframe.Monthly]: Statistics_CTF & MonthlyLeaderboard;
+}
+export type CtfLeaderboard<T extends Timeframe> = LeaderboardVariants[T];

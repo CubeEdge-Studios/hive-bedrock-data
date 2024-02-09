@@ -1,3 +1,4 @@
+import { Timeframe } from "../../enums";
 import {
     AllTimeLeaderboard,
     AllTimeStatistics,
@@ -13,7 +14,14 @@ interface Statistics_PARTY {
     rounds_survived: number;
 }
 
-export type AllTimeStatistics_PARTY = AllTimeStatistics & Statistics_PARTY;
-export type MonthlyStatistics_PARTY = MonthlyStatistics & Statistics_PARTY;
-export type AllTimeLeaderboard_PARTY = AllTimeLeaderboard & Statistics_PARTY;
-export type MonthlyLeaderboard_PARTY = MonthlyLeaderboard & Statistics_PARTY;
+interface StatisticVariants {
+    [Timeframe.AllTime]: Statistics_PARTY & AllTimeStatistics;
+    [Timeframe.Monthly]: Statistics_PARTY & MonthlyStatistics;
+}
+export type PartyStatistics<T extends Timeframe> = StatisticVariants[T];
+
+interface LeaderboardVariants {
+    [Timeframe.AllTime]: Statistics_PARTY & AllTimeLeaderboard;
+    [Timeframe.Monthly]: Statistics_PARTY & MonthlyLeaderboard;
+}
+export type PartyLeaderboard<T extends Timeframe> = LeaderboardVariants[T];
