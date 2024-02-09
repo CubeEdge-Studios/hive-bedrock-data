@@ -8,8 +8,6 @@ export type Response_AllTimeLeaderboard<G extends Game> = Leaderboards<
 >[];
 
 export type Route_AllTimeLeaderboard<T extends string> =
-    T extends `/game/all/${infer G}`
-        ? G extends Game
-            ? Response_AllTimeLeaderboard<G>
-            : never
+    T extends `/game/all/${infer G extends Game}`
+        ? Response_AllTimeLeaderboard<G>
         : never;

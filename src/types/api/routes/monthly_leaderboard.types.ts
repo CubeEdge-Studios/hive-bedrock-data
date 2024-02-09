@@ -8,8 +8,6 @@ export type Response_MonthlyLeaderboard<G extends Game> = Leaderboards<
 >[];
 
 export type Route_MonthlyLeaderboard<T extends string> =
-    T extends `/game/monthly/${infer G}`
-        ? G extends Game
-            ? Response_MonthlyLeaderboard<G>
-            : never
+    T extends `/game/monthly/${infer G extends Game}`
+        ? Response_MonthlyLeaderboard<G>
         : never;

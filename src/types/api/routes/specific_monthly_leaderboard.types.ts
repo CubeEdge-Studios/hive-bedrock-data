@@ -8,8 +8,6 @@ export type Response_SpecificMonthlyLeaderboard<G extends Game> = Leaderboards<
 >[];
 
 export type Route_SpecificMonthlyLeaderboard<T extends string> =
-    T extends `/game/monthly/${infer G}/${number}/${number}/${number}/${number}`
-        ? G extends Game
-            ? Response_SpecificMonthlyLeaderboard<G>
-            : never
+    T extends `/game/monthly/${infer G extends Game}/${number}/${number}/${number}/${number}`
+        ? Response_SpecificMonthlyLeaderboard<G>
         : never;

@@ -11,10 +11,10 @@ export type Response_SpecificMonthlyStatistics<G extends Game | "all"> =
         : never;
 
 export type Route_SpecificMonthlyStatistics<T extends string> =
-    T extends `/game/monthly/${infer G}/${string}/${number}/${number}`
-        ? G extends Game | "all"
-            ? Response_SpecificMonthlyStatistics<G>
-            : never
+    T extends `/game/monthly/${infer G extends
+        | Game
+        | "all"}/${string}/${number}/${number}`
+        ? Response_SpecificMonthlyStatistics<G>
         : never;
 
 type Response_SpecificMonthlyStatistics_All = {

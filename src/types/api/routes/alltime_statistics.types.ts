@@ -12,10 +12,8 @@ export type Response_AllTimeStatistics<G extends Game | "all" | "main"> =
         : never;
 
 export type Route_AllTimeStatistics<T extends string> =
-    T extends `/game/all/${infer G}/${string}`
-        ? G extends Game | "all" | "main"
-            ? Response_AllTimeStatistics<G>
-            : never
+    T extends `/game/all/${infer G extends Game | "all" | "main"}/${string}`
+        ? Response_AllTimeStatistics<G>
         : never;
 
 type Response_AllTimeStatistics_All = {

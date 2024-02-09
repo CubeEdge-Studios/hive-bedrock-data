@@ -10,10 +10,8 @@ export type Response_MonthlyStatistics<G extends Game | "all"> = G extends Game
     : never;
 
 export type Route_MonthlyStatistics<T extends string> =
-    T extends `/game/monthly/${infer G}/${string}`
-        ? G extends Game | "all"
-            ? Response_MonthlyStatistics<G>
-            : never
+    T extends `/game/monthly/${infer G extends Game | "all"}/${string}`
+        ? Response_MonthlyStatistics<G>
         : never;
 
 type Response_MonthlyStatistics_All = {
