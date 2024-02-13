@@ -30,7 +30,7 @@ export interface PlayerMetadata {
     pets: string[];
     mounts: string[];
     hats: string[];
-    backblinds: string[];
+    backblings: string[];
 }
 
 export interface PlayerMetadata_Nested {
