@@ -21,7 +21,7 @@ export default {
     level_increment: 150,
     level_cap: null,
 
-    colours: ["#559dbf", "#339b26", "#d6dddd", "#0b5099", "#61ba63"],
+    colours: ["#22565b", "#339b26", "#d6dddd", "#0b5099", "#61ba63"],
 
     modes: [
         {
