@@ -42,7 +42,7 @@ export default function calculateLevelFromXP(
     }
 
     let level_increment = game_data.level_increment / 2; // The amount of xp that is added between each level
-    let level_cap = game_data.level_increment; // The level where the difficulty of each level dosen't increase
+    let level_cap = game_data.level_cap; // The level where the difficulty of each level dosen't increase
 
     let level =
         (level_increment +
@@ -52,8 +52,7 @@ export default function calculateLevelFromXP(
     if (level < 1) return 1;
     if (level > game_data.max_level) return game_data.max_level;
 
-    if (!level_cap || level_cap <= level_cap)
-        return Math.floor(level * 100) / 100; // Return if there is no level cap or the level dosen't reach the level cap
+    if (!level_cap || level <= level_cap) return Math.floor(level * 100) / 100; // Return if there is no level cap or the level dosen't reach the level cap
 
     let level_with_cap =
         level_cap +
