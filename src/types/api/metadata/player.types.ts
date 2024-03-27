@@ -27,10 +27,15 @@ export interface PlayerMetadata {
     costume_unlocked?: string[];
     equipped_costume?: string;
 
+    backbling_count: number;
+    "cosmetics.backblings"?: PlayerMetadata_Backbling[];
+    equipped_backbling?: PlayerMetadata_Backbling;
+
+    hat_count: number;
+    hat_unlocked?: PlayerMetadata_Hat[];
+
     pets: string[];
     mounts: string[];
-    hats: string[];
-    backblings: string[];
 }
 
 export interface PlayerMetadata_Nested {
@@ -40,4 +45,16 @@ export interface PlayerMetadata_Nested {
 export interface PlayerMetadata_Avatar {
     url: string;
     name: string;
+}
+
+export interface PlayerMetadata_Backbling {
+    name: string;
+    icon: string;
+    rarity: string;
+}
+
+export interface PlayerMetadata_Hat {
+    name: string;
+    icon: string;
+    rarity: string;
 }
