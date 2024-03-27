@@ -60,7 +60,7 @@ export default function calculateLevelFromXP(
         (xp -
             (level_increment * Math.pow(level_cap - 1, 2) +
                 (level_cap - 1) * level_increment)) /
-            ((level_cap - 1) * level_increment); // The level is larger than the cap so the excess xp is removed and a level is calculated
+            ((level_cap - 1) * level_increment * 2); // The level is larger than the cap so the excess xp is removed and a level is calculated
 
     if (level_with_cap < 1) return 1;
     if (level_with_cap > game_data.max_level) return game_data.max_level;
