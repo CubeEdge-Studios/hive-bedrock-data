@@ -14,6 +14,7 @@ interface Statistics_MURDER {
     coins: number;
     murders: number;
     murderer_eliminations: number;
+    prestige: number;
 }
 
 interface StatisticVariants {
