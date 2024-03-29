@@ -28,7 +28,7 @@ export interface PlayerMetadata {
     equipped_costume?: string;
 
     backbling_count: number;
-    "cosmetics.backblings"?: PlayerMetadata_Backbling[];
+    "cosmetics.backbling"?: PlayerMetadata_Backbling[];
     equipped_backbling?: PlayerMetadata_Backbling;
 
     hat_count: number;
