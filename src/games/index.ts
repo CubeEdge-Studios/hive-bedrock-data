@@ -15,6 +15,7 @@ import party from "./party";
 import sg from "./sg";
 import sky from "./sky";
 import wars from "./wars";
+import bed from "./bed";
 
 export const Games = {
     [Game.BlockDrop]: drop,
@@ -30,4 +31,5 @@ export const Games = {
     [Game.SurvivalGames]: sg,
     [Game.TheBridge]: bridge,
     [Game.TreasureWars]: wars,
+    [Game.BedWars]: bed,
 };
