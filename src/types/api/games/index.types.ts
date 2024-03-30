@@ -11,6 +11,7 @@ import { PartyStatistics, PartyLeaderboard } from "./party.types";
 import { SgStatistics, SgLeaderboard } from "./sg.types";
 import { SkyStatistics, SkyLeaderboard } from "./sky.types";
 import { WarsStatistics, WarsLeaderboard } from "./wars.types";
+import { BedStatistics, BedLeaderboard } from "./bed.types";
 
 export {
     BridgeStatistics,
@@ -39,4 +40,6 @@ export {
     SkyLeaderboard,
     WarsStatistics,
     WarsLeaderboard,
+    BedStatistics,
+    BedLeaderboard,
 };
