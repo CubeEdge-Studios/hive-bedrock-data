@@ -27,6 +27,7 @@ interface AllStatistics<T extends Timeframe> {
     [Game.SurvivalGames]: API.SgStatistics<T>;
     [Game.TheBridge]: API.BridgeStatistics<T>;
     [Game.TreasureWars]: API.WarsStatistics<T>;
+    [Game.BedWars]: API.BedStatistics<T>;
 }
 
 export type Leaderboards<
@@ -48,4 +49,5 @@ interface AllLeaderboards<T extends Timeframe> {
     [Game.SurvivalGames]: API.SgLeaderboard<T>;
     [Game.TheBridge]: API.BridgeLeaderboard<T>;
     [Game.TreasureWars]: API.WarsLeaderboard<T>;
+    [Game.BedWars]: API.BedLeaderboard<T>;
 }
