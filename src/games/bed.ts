@@ -17,7 +17,7 @@ export default {
 
     max_level: 25, // More levels to be released
     can_prestige: false,
-    max_prestige: 5,
+    max_prestige: 0,
     level_increment: 150,
     level_cap: null,
 
