@@ -21,8 +21,8 @@ export default {
     level_increment: 150,
     level_cap: null,
 
-    // TODO
-    colours: ["#ffffff", "#ffffff", "#ffffff", "#ffffff", "#ffffff"],
+    // still unsure about main accent colour
+    colours: ["#894233", "#c7d5d7", "#d44c43", "#939fa6", "#482618"],
 
     modes: [
         {
