@@ -15,7 +15,7 @@ export default {
         "Defend your bed, eliminate others, solo or as a team. Last team standing wins!",
     icon_url: IMAGE_CDN + "/icons/hub/games/bed.png",
 
-    max_level: 25, // More levels to be released
+    max_level: 50, // More levels to be released
     can_prestige: false,
     max_prestige: 0,
     level_increment: 150,
