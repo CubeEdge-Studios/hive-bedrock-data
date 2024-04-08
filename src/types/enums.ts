@@ -3,6 +3,12 @@ export enum Timeframe {
     Monthly = "monthly",
 }
 
+export enum APIVersion {
+    None = "none",
+    V_2024_03_29 = "2024-03-29",
+    latest = "latest",
+}
+
 export enum PlayerRank {
     Regular = "REGULAR",
     Plus = "PLUS",

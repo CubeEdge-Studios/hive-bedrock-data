@@ -6,14 +6,14 @@ export * from "./metadata/game.types";
 export * from "./metadata/global_statistics.types";
 export * from "./metadata/maps.types";
 export * from "./metadata/player.types";
-export * from "./routes/index.types";
+export * from "./endpoints/index.types";
 
 export type Statistics<
     G extends Game,
     T extends Timeframe
 > = AllStatistics<T>[G];
 
-interface AllStatistics<T extends Timeframe> {
+export interface AllStatistics<T extends Timeframe> {
     [Game.BlockDrop]: API.DropStatistics<T>;
     [Game.BlockParty]: API.PartyStatistics<T>;
     [Game.CaptureTheFlag]: API.CtfStatistics<T>;
@@ -35,7 +35,7 @@ export type Leaderboards<
     T extends Timeframe
 > = AllLeaderboards<T>[G];
 
-interface AllLeaderboards<T extends Timeframe> {
+export interface AllLeaderboards<T extends Timeframe> {
     [Game.BlockDrop]: API.DropLeaderboard<T>;
     [Game.BlockParty]: API.PartyLeaderboard<T>;
     [Game.CaptureTheFlag]: API.CtfLeaderboard<T>;
