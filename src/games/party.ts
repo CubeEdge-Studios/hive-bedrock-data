@@ -12,7 +12,7 @@ export default {
     name: "Block Party",
 
     description:
-        "It's time ot dance! Dance your way to the correct color or fall to your death!",
+        "It's time to dance! Dance your way to the correct color or fall to your death!",
     icon_url: IMAGE_CDN + "/icons/hub/games/party.png",
 
     max_level: 25,
