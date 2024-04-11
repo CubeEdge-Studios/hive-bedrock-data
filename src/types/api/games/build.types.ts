@@ -10,11 +10,11 @@ interface Statistics_BUILD {
     xp: number;
     played: number;
     victories: number;
-    rating_meh_recieved: number;
-    rating_okay_recieved: number;
-    rating_good_recieved: number;
-    rating_great_recieved: number;
-    rating_love_recieved: number;
+    rating_meh_received: number;
+    rating_okay_received: number;
+    rating_good_received: number;
+    rating_great_received: number;
+    rating_love_received: number;
 }
 
 interface StatisticVariants {
