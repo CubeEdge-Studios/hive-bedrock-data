@@ -15,6 +15,9 @@ interface Statistics_SG {
     cows: number;
     deathmatches: number;
     crates: number;
+    teleporters_used: number;
+    launchpads_used: number;
+    flares_used: number;
 }
 
 interface StatisticVariants {

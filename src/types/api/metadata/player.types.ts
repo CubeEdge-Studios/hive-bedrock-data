@@ -33,6 +33,7 @@ export interface PlayerMetadata {
 
     hat_count: number;
     hat_unlocked?: PlayerMetadata_Hat[];
+    equipped_hat?: PlayerMetadata_Hat;
 
     pets: string[];
     mounts: string[];
