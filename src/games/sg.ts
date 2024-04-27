@@ -10,6 +10,7 @@ export default {
     id: Game.SurvivalGames,
     short_name: "SG",
     name: "Survival Games",
+    deprecated: false,
 
     description:
         "The original battle royale. Loot a vast world and fight other players to be the last player standing.",

@@ -10,6 +10,7 @@ export default {
     id: Game.TheBridge,
     short_name: "BRIDGE",
     name: "The Bridge",
+    deprecated: false,
 
     description: "Bridge to victory in this fast-paced PvP game.",
     icon_url: IMAGE_CDN + "/icons/hub/games/bridge.png",

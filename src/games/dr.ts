@@ -10,6 +10,7 @@ export default {
     id: Game.DeathRun,
     short_name: "DR",
     name: "Deathrun",
+    deprecated: false,
 
     description:
         "Race through parkour maps, avoiding the obstacles being activated by deaths.",
