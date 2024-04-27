@@ -10,6 +10,7 @@ export default {
     id: Game.Gravity,
     short_name: "GRAV",
     name: "Gravity",
+    deprecated: false,
 
     description:
         "The ultimate movement challenge! Can you fall to the bottom safely?",

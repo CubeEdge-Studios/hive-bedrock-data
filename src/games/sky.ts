@@ -10,6 +10,7 @@ export default {
     id: Game.Skywars,
     short_name: "SKY",
     name: "SkyWars",
+    deprecated: false,
 
     description: "Mine lucky ores to gain loot, then fight!",
     icon_url: IMAGE_CDN + "/icons/hub/games/sky.png",

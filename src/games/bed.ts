@@ -10,6 +10,7 @@ export default {
     id: Game.BedWars,
     short_name: "BED",
     name: "BedWars",
+    deprecated: false,
 
     description:
         "Defend your bed, eliminate others, solo or as a team. Last team standing wins!",
