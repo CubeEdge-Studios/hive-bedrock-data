@@ -10,7 +10,7 @@ export default {
     id: Game.TreasureWars,
     short_name: "WARS",
     name: "Treasure Wars",
-    deprecated: true,
+    discontinued: true,
 
     description:
         "Bedwars with treasure, Treasures grant infinite respawns. Protect your treasure and destroy others.",

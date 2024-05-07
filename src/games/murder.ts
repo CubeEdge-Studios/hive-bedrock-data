@@ -10,7 +10,7 @@ export default {
     id: Game.MurderMystery,
     short_name: "MURDER",
     name: "Murder Mystery",
-    deprecated: false,
+    discontinued: false,
 
     description:
         "There is a murderer among you. Find the murderer, or be the murderer.",

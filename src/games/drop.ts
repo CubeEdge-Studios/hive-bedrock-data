@@ -10,7 +10,7 @@ export default {
     id: Game.BlockDrop,
     short_name: "DROP",
     name: "Block Drop",
-    deprecated: false,
+    discontinued: false,
 
     description:
         "Competitive parkour. Be the last player standing in a disintegrating arena.",

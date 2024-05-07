@@ -43,7 +43,7 @@ export interface Game_Data<G extends Game> {
     id: G;
     short_name: string;
     name: string;
-    deprecated: boolean;
+    discontinued: boolean;
 
     description: string;
     icon_url: string;

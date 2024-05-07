@@ -10,7 +10,7 @@ export default {
     id: Game.HideAndSeek,
     short_name: "HIDE",
     name: "Hide and Seek",
-    deprecated: false,
+    discontinued: false,
 
     description:
         "Become a Minecraft block and hide from seekers. Found hiders become seekers.",

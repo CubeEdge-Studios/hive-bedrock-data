@@ -10,7 +10,7 @@ export default {
     id: Game.JustBuild,
     short_name: "BUILD",
     name: "Just Build",
-    deprecated: false,
+    discontinued: false,
 
     description:
         "Battle it out to create the best build for a randomly chosen theme.",

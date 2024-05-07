@@ -10,7 +10,7 @@ export default {
     id: Game.BlockParty,
     short_name: "PARTY",
     name: "Block Party",
-    deprecated: false,
+    discontinued: false,
 
     description:
         "It's time to dance! Dance your way to the correct color or fall to your death!",

@@ -10,7 +10,7 @@ export default {
     id: Game.GroundWars,
     short_name: "GROUND",
     name: "Ground Wars",
-    deprecated: false,
+    discontinued: false,
 
     description:
         "Fight for territory control. each kill grants more territory.",
