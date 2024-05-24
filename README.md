@@ -75,8 +75,8 @@ function hasCompleted(xp: number, game_id: Game): boolean;
 
 ## API Type Definitions
 
-This repo has type definitions for the different routes on the public api.
+This repo has type definitions for the different endpoints on the public api. These return a type value for a valid response from the api.
 
 ```ts
-Routes<"/game/all/sky"> = Response_AllTimeLeaderboard<Game.SkyWars>;
+Endpoints<"/game/all/sky", APIVersion.V_2024_03_29> = (Statistics_SKY & AllTimeLeaderboard)[]
 ```

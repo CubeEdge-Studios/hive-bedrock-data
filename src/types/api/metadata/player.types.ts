@@ -1,4 +1,5 @@
 import { PlayerRank } from "../../enums";
+import { Game } from "../../games.types";
 
 export interface PlayerMetadata {
     UUID: string;
@@ -59,3 +60,34 @@ export interface PlayerMetadata_Hat {
     icon: string;
     rarity: string;
 }
+
+export interface PlayerMetadata_Title_Basic {
+    display: string;
+}
+export interface PlayerMetadata_Title_StatTrack {
+    display: string;
+    special_type: "stat_track";
+    stat_track: [
+        {
+            game: Game;
+            placeholder: string;
+            key: string;
+        }
+    ];
+}
+export interface PlayerMetadata_Title_StatTrack_Calculation {
+    display: string;
+    special_type: "stat_track";
+    stat_track: [
+        {
+            game: Game;
+            placeholder: string;
+            keys: string[];
+            operation: "add" | "subtract" | "divide";
+        }
+    ];
+}
+export type PlayerMetadata_Title =
+    | PlayerMetadata_Title_Basic
+    | PlayerMetadata_Title_StatTrack
+    | PlayerMetadata_Title_StatTrack_Calculation;
