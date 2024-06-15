@@ -12,6 +12,7 @@ import { SgStatistics, SgLeaderboard } from "./sg.types";
 import { SkyStatistics, SkyLeaderboard } from "./sky.types";
 import { WarsStatistics, WarsLeaderboard } from "./wars.types";
 import { BedStatistics, BedLeaderboard } from "./bed.types";
+import { ParkourStatistics } from "./parkour.types";
 
 export {
     BridgeStatistics,
@@ -42,4 +43,5 @@ export {
     WarsLeaderboard,
     BedStatistics,
     BedLeaderboard,
+    ParkourStatistics,
 };

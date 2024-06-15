@@ -1,12 +1,11 @@
 import { Games } from "../games";
 import { Game } from "../types/games.types";
 
-export default function calculateLevelFromXP(
-    xp: number,
-    game_id: Game
-): number | null {
+export default function calculateLevelFromXP(xp: number, game_id: Game): number | null {
     const game_data = Games[game_id];
     if (!game_data) return null;
+
+    if (game_data.max_level === 0) return null;
 
     // Bridge uses a different xp-level system to the other games
     if (game_data.id === Game.TheBridge) {
@@ -45,8 +44,7 @@ export default function calculateLevelFromXP(
     let level_cap = game_data.level_cap; // The level where the difficulty of each level dosen't increase
 
     let level =
-        (level_increment +
-            Math.sqrt(level_increment * (level_increment + 4 * xp))) /
+        (level_increment + Math.sqrt(level_increment * (level_increment + 4 * xp))) /
         (2 * level_increment); // Calculate the level without the level cap
 
     if (level < 1) return 1;
@@ -56,9 +54,7 @@ export default function calculateLevelFromXP(
 
     let level_with_cap =
         level_cap +
-        (xp -
-            (level_increment * Math.pow(level_cap - 1, 2) +
-                (level_cap - 1) * level_increment)) /
+        (xp - (level_increment * Math.pow(level_cap - 1, 2) + (level_cap - 1) * level_increment)) /
             ((level_cap - 1) * level_increment * 2); // The level is larger than the cap so the excess xp is removed and a level is calculated
 
     if (level_with_cap < 1) return 1;
