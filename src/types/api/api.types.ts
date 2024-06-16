@@ -8,10 +8,7 @@ export * from "./metadata/maps.types";
 export * from "./metadata/player.types";
 export * from "./routes/index.types";
 
-export type Statistics<
-    G extends Game,
-    T extends Timeframe
-> = AllStatistics<T>[G];
+export type Statistics<G extends Game, T extends Timeframe> = AllStatistics<T>[G];
 
 interface AllStatistics<T extends Timeframe> {
     [Game.BlockDrop]: API.DropStatistics<T>;
@@ -28,12 +25,10 @@ interface AllStatistics<T extends Timeframe> {
     [Game.TheBridge]: API.BridgeStatistics<T>;
     [Game.TreasureWars]: API.WarsStatistics<T>;
     [Game.BedWars]: API.BedStatistics<T>;
+    [Game.ParkourWorlds]: API.ParkourStatistics<T>;
 }
 
-export type Leaderboards<
-    G extends Game,
-    T extends Timeframe
-> = AllLeaderboards<T>[G];
+export type Leaderboards<G extends Game, T extends Timeframe> = AllLeaderboards<T>[G];
 
 interface AllLeaderboards<T extends Timeframe> {
     [Game.BlockDrop]: API.DropLeaderboard<T>;
@@ -50,4 +45,5 @@ interface AllLeaderboards<T extends Timeframe> {
     [Game.TheBridge]: API.BridgeLeaderboard<T>;
     [Game.TreasureWars]: API.WarsLeaderboard<T>;
     [Game.BedWars]: API.BedLeaderboard<T>;
+    [Game.ParkourWorlds]: unknown;
 }

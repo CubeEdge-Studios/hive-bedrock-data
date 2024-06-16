@@ -13,6 +13,7 @@ export enum Game {
     TheBridge = "bridge",
     Gravity = "grav",
     BedWars = "bed",
+    ParkourWorlds = "parkour",
 }
 
 export enum Game_Variant_Type {

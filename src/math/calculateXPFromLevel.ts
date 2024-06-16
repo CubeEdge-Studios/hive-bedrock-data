@@ -1,12 +1,11 @@
 import { Games } from "../games";
 import { Game } from "../types/games.types";
 
-export default function calculateXPFromLevel(
-    level: number,
-    game_id: Game
-): number | null {
+export default function calculateXPFromLevel(level: number, game_id: Game): number | null {
     const game_data = Games[game_id];
     if (!game_data) return null;
+
+    if (game_data.max_level === 0) return null;
 
     // Bridge uses a different xp-level system to the other games
     if (game_data.id === Game.TheBridge) {
@@ -24,8 +23,7 @@ export default function calculateXPFromLevel(
                 let current_level_xp = total_xp - previous_level_xp;
                 let input_level_percentage = level - l;
 
-                let total_input_level_xp =
-                    total_xp + current_level_xp * input_level_percentage;
+                let total_input_level_xp = total_xp + current_level_xp * input_level_percentage;
 
                 return Math.round(total_input_level_xp);
             }

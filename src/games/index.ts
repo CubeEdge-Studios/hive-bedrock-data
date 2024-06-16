@@ -16,6 +16,7 @@ import sg from "./sg";
 import sky from "./sky";
 import wars from "./wars";
 import bed from "./bed";
+import parkour from "./parkour";
 
 export const Games = {
     [Game.BlockDrop]: drop,
@@ -32,4 +33,5 @@ export const Games = {
     [Game.TheBridge]: bridge,
     [Game.TreasureWars]: wars,
     [Game.BedWars]: bed,
+    [Game.ParkourWorlds]: parkour,
 };
