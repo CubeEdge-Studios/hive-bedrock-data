@@ -1,10 +1,5 @@
 import { IMAGE_CDN } from ".";
-import {
-    Game,
-    Game_Variant_Queue_Type,
-    Game_Variant_Type,
-    Game_Data,
-} from "../types/games.types";
+import { Game, Game_Variant_Queue_Type, Game_Variant_Type, Game_Data } from "../types/games.types";
 
 export default {
     id: Game.MurderMystery,
@@ -12,10 +7,10 @@ export default {
     name: "Murder Mystery",
     discontinued: false,
 
-    description:
-        "There is a murderer among you. Find the murderer, or be the murderer.",
+    description: "There is a murderer among you. Find the murderer, or be the murderer.",
     icon_url: IMAGE_CDN + "/icons/hub/games/murder.png",
 
+    has_levels: true,
     max_level: 100,
     can_prestige: true,
     max_prestige: 5,

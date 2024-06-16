@@ -1,10 +1,5 @@
 import { IMAGE_CDN } from ".";
-import {
-    Game,
-    Game_Variant_Queue_Type,
-    Game_Variant_Type,
-    Game_Data,
-} from "../types/games.types";
+import { Game, Game_Variant_Queue_Type, Game_Variant_Type, Game_Data } from "../types/games.types";
 
 export default {
     id: Game.GroundWars,
@@ -12,10 +7,10 @@ export default {
     name: "Ground Wars",
     discontinued: false,
 
-    description:
-        "Fight for territory control. each kill grants more territory.",
+    description: "Fight for territory control. each kill grants more territory.",
     icon_url: IMAGE_CDN + "/icons/hub/games/ground.png",
 
+    has_levels: true,
     max_level: 20,
     can_prestige: false,
     max_prestige: null,

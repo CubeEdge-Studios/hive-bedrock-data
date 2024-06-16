@@ -1,10 +1,5 @@
 import { IMAGE_CDN } from ".";
-import {
-    Game,
-    Game_Variant_Queue_Type,
-    Game_Variant_Type,
-    Game_Data,
-} from "../types/games.types";
+import { Game, Game_Variant_Queue_Type, Game_Variant_Type, Game_Data } from "../types/games.types";
 
 export default {
     id: Game.TreasureWars,
@@ -16,6 +11,7 @@ export default {
         "Bedwars with treasure, Treasures grant infinite respawns. Protect your treasure and destroy others.",
     icon_url: IMAGE_CDN + "/icons/hub/games/wars.png",
 
+    has_levels: true,
     max_level: 100,
     can_prestige: true,
     max_prestige: 5,

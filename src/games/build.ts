@@ -1,10 +1,5 @@
 import { IMAGE_CDN } from ".";
-import {
-    Game,
-    Game_Variant_Queue_Type,
-    Game_Variant_Type,
-    Game_Data,
-} from "../types/games.types";
+import { Game, Game_Variant_Queue_Type, Game_Variant_Type, Game_Data } from "../types/games.types";
 
 export default {
     id: Game.JustBuild,
@@ -12,10 +7,10 @@ export default {
     name: "Just Build",
     discontinued: false,
 
-    description:
-        "Battle it out to create the best build for a randomly chosen theme.",
+    description: "Battle it out to create the best build for a randomly chosen theme.",
     icon_url: IMAGE_CDN + "/icons/hub/games/build.png",
 
+    has_levels: true,
     max_level: 20,
     can_prestige: false,
     max_prestige: null,

@@ -1,10 +1,5 @@
 import { IMAGE_CDN } from ".";
-import {
-    Game,
-    Game_Variant_Queue_Type,
-    Game_Variant_Type,
-    Game_Data,
-} from "../types/games.types";
+import { Game, Game_Variant_Queue_Type, Game_Variant_Type, Game_Data } from "../types/games.types";
 
 export default {
     id: Game.SurvivalGames,
@@ -16,6 +11,7 @@ export default {
         "The original battle royale. Loot a vast world and fight other players to be the last player standing.",
     icon_url: IMAGE_CDN + "/icons/hub/games/sg.png",
 
+    has_levels: true,
     max_level: 30,
     can_prestige: false,
     max_prestige: null,

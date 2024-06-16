@@ -1,10 +1,5 @@
 import { IMAGE_CDN } from ".";
-import {
-    Game,
-    Game_Variant_Queue_Type,
-    Game_Variant_Type,
-    Game_Data,
-} from "../types/games.types";
+import { Game, Game_Variant_Queue_Type, Game_Variant_Type, Game_Data } from "../types/games.types";
 
 export default {
     id: Game.TheBridge,
@@ -15,6 +10,7 @@ export default {
     description: "Bridge to victory in this fast-paced PvP game.",
     icon_url: IMAGE_CDN + "/icons/hub/games/bridge.png",
 
+    has_levels: true,
     max_level: 20,
     can_prestige: false,
     max_prestige: null,
