@@ -10,7 +10,7 @@ export default {
     description: "Race through parkour maps, avoiding the obstacles being activated by deaths.",
     icon_url: IMAGE_CDN + "/icons/hub/games/dr.png",
 
-    has_level: true,
+    has_levels: true,
     max_level: 75,
     can_prestige: false,
     max_prestige: null,

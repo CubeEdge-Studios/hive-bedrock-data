@@ -11,7 +11,7 @@ export default {
         "The original battle royale. Loot a vast world and fight other players to be the last player standing.",
     icon_url: IMAGE_CDN + "/icons/hub/games/sg.png",
 
-    has_level: true,
+    has_levels: true,
     max_level: 30,
     can_prestige: false,
     max_prestige: null,

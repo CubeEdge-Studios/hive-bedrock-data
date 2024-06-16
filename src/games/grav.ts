@@ -10,7 +10,7 @@ export default {
     description: "The ultimate movement challenge! Can you fall to the bottom safely?",
     icon_url: IMAGE_CDN + "/icons/hub/games/grav.png",
 
-    has_level: true,
+    has_levels: true,
     max_level: 25,
     can_prestige: false,
     max_prestige: null,

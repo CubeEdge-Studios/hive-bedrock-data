@@ -10,7 +10,7 @@ export default {
     description: "Fight for territory control. each kill grants more territory.",
     icon_url: IMAGE_CDN + "/icons/hub/games/ground.png",
 
-    has_level: true,
+    has_levels: true,
     max_level: 20,
     can_prestige: false,
     max_prestige: null,

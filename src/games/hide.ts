@@ -10,7 +10,7 @@ export default {
     description: "Become a Minecraft block and hide from seekers. Found hiders become seekers.",
     icon_url: IMAGE_CDN + "/icons/hub/games/hide.png",
 
-    has_level: true,
+    has_levels: true,
     max_level: 75,
     can_prestige: false,
     max_prestige: null,

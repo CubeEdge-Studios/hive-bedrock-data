@@ -49,7 +49,7 @@ export interface Game_Data<G extends Game> {
     description: string;
     icon_url: string;
 
-    has_level: boolean;
+    has_levels: boolean;
     max_level: number;
     can_prestige: boolean;
     max_prestige: number | null;

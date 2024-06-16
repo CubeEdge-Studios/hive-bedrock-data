@@ -10,7 +10,7 @@ export default {
     description: "Mine lucky ores to gain loot, then fight!",
     icon_url: IMAGE_CDN + "/icons/hub/games/sky.png",
 
-    has_level: true,
+    has_levels: true,
     max_level: 75,
     can_prestige: false,
     max_prestige: null,

@@ -10,7 +10,7 @@ export default {
     description: "It's time to dance! Dance your way to the correct color or fall to your death!",
     icon_url: IMAGE_CDN + "/icons/hub/games/party.png",
 
-    has_level: true,
+    has_levels: true,
     max_level: 25,
     can_prestige: false,
     max_prestige: null,

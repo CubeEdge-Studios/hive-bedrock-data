@@ -10,7 +10,7 @@ export default {
     description: "Battle it out to create the best build for a randomly chosen theme.",
     icon_url: IMAGE_CDN + "/icons/hub/games/build.png",
 
-    has_level: true,
+    has_levels: true,
     max_level: 20,
     can_prestige: false,
     max_prestige: null,

@@ -10,7 +10,7 @@ export default {
     description: "Bridge to victory in this fast-paced PvP game.",
     icon_url: IMAGE_CDN + "/icons/hub/games/bridge.png",
 
-    has_level: true,
+    has_levels: true,
     max_level: 20,
     can_prestige: false,
     max_prestige: null,

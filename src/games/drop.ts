@@ -10,7 +10,7 @@ export default {
     description: "Competitive parkour. Be the last player standing in a disintegrating arena.",
     icon_url: IMAGE_CDN + "/icons/hub/games/drop.png",
 
-    has_level: true,
+    has_levels: true,
     max_level: 25,
     can_prestige: false,
     max_prestige: null,

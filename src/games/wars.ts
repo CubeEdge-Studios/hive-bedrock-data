@@ -11,7 +11,7 @@ export default {
         "Bedwars with treasure, Treasures grant infinite respawns. Protect your treasure and destroy others.",
     icon_url: IMAGE_CDN + "/icons/hub/games/wars.png",
 
-    has_level: true,
+    has_levels: true,
     max_level: 100,
     can_prestige: true,
     max_prestige: 5,
