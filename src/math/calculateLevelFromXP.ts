@@ -5,7 +5,7 @@ export default function calculateLevelFromXP(xp: number, game_id: Game): number 
     const game_data = Games[game_id];
     if (!game_data) return null;
 
-    if (game_data.max_level === 0) return null;
+    if (game_data.max_level === 0 || !game_data.has_level) return null;
 
     // Bridge uses a different xp-level system to the other games
     if (game_data.id === Game.TheBridge) {

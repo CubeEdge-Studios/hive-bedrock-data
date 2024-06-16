@@ -1,10 +1,5 @@
 import { IMAGE_CDN } from ".";
-import {
-    Game,
-    Game_Variant_Queue_Type,
-    Game_Variant_Type,
-    Game_Data,
-} from "../types/games.types";
+import { Game, Game_Variant_Queue_Type, Game_Variant_Type, Game_Data } from "../types/games.types";
 
 export default {
     id: Game.Gravity,
@@ -12,10 +7,10 @@ export default {
     name: "Gravity",
     discontinued: false,
 
-    description:
-        "The ultimate movement challenge! Can you fall to the bottom safely?",
+    description: "The ultimate movement challenge! Can you fall to the bottom safely?",
     icon_url: IMAGE_CDN + "/icons/hub/games/grav.png",
 
+    has_level: true,
     max_level: 25,
     can_prestige: false,
     max_prestige: null,

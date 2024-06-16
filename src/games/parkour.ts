@@ -11,6 +11,7 @@ export default {
         "Parkour Worlds will see you traversing a range of unique parkour courses in a range of awesome environments.",
     icon_url: IMAGE_CDN + "/icons/hub/games/hub-parkour.png",
 
+    has_level: false,
     max_level: 0,
     can_prestige: false,
     max_prestige: 0,

@@ -1,10 +1,5 @@
 import { IMAGE_CDN } from ".";
-import {
-    Game,
-    Game_Variant_Queue_Type,
-    Game_Variant_Type,
-    Game_Data,
-} from "../types/games.types";
+import { Game, Game_Variant_Queue_Type, Game_Variant_Type, Game_Data } from "../types/games.types";
 
 export default {
     id: Game.BlockParty,
@@ -12,10 +7,10 @@ export default {
     name: "Block Party",
     discontinued: false,
 
-    description:
-        "It's time to dance! Dance your way to the correct color or fall to your death!",
+    description: "It's time to dance! Dance your way to the correct color or fall to your death!",
     icon_url: IMAGE_CDN + "/icons/hub/games/party.png",
 
+    has_level: true,
     max_level: 25,
     can_prestige: false,
     max_prestige: null,
