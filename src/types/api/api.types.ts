@@ -45,5 +45,5 @@ interface AllLeaderboards<T extends Timeframe> {
     [Game.TheBridge]: API.BridgeLeaderboard<T>;
     [Game.TreasureWars]: API.WarsLeaderboard<T>;
     [Game.BedWars]: API.BedLeaderboard<T>;
-    [Game.ParkourWorlds]: unknown;
+    [Game.ParkourWorlds]: never;
 }

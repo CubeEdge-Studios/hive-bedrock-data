@@ -18,4 +18,4 @@ interface StatisticVariants {
 }
 export type ParkourStatistics<T extends Timeframe> = T extends Timeframe.AllTime
     ? StatisticVariants[T]
-    : unknown;
+    : never;
