@@ -2,10 +2,12 @@ import { Timeframe } from "../../enums";
 
 type ParkourWorld = {
     [key: string]: ParkourCourse;
-} & { parkour_stars: number; collected_stars: string[] };
+} & { parkour_stars: number };
 type ParkourCourse = {
     best_run_time: number | null;
     best_checkpoint_times: ParkourCheckpoint;
+    collected_stars: string[];
+    course_stars: number;
 };
 type ParkourCheckpoint = {
     [key: string]: number;
