@@ -1,10 +1,4 @@
 import { Timeframe } from "../../enums";
-import {
-    AllTimeLeaderboard,
-    AllTimeStatistics,
-    MonthlyLeaderboard,
-    MonthlyStatistics,
-} from "./default.types";
 
 interface Statistics_WARS {
     xp: number;
@@ -17,14 +11,34 @@ interface Statistics_WARS {
     prestige: number;
 }
 
+interface Statistics_WARS_AllTime extends Statistics_WARS {
+    UUID: string;
+    first_played: number;
+}
+interface Statistics_WARS_Monthly extends Statistics_WARS {
+    index: number;
+    human_index: number;
+    uncapped_xp?: number;
+}
+
 interface StatisticVariants {
-    [Timeframe.AllTime]: Statistics_WARS & AllTimeStatistics;
-    [Timeframe.Monthly]: Statistics_WARS & MonthlyStatistics;
+    [Timeframe.AllTime]: Statistics_WARS_AllTime;
+    [Timeframe.Monthly]: Statistics_WARS_Monthly;
 }
 export type WarsStatistics<T extends Timeframe> = StatisticVariants[T];
 
+interface Leaderboard_WARS_AllTime extends Statistics_WARS {
+    UUID: string;
+    first_played: number;
+}
+interface Leaderboard_WARS_Monthly extends Statistics_WARS {
+    index: number;
+    human_index: number;
+    uncapped_xp?: number;
+}
+
 interface LeaderboardVariants {
-    [Timeframe.AllTime]: Statistics_WARS & AllTimeLeaderboard;
-    [Timeframe.Monthly]: Statistics_WARS & MonthlyLeaderboard;
+    [Timeframe.AllTime]: Leaderboard_WARS_AllTime;
+    [Timeframe.Monthly]: Leaderboard_WARS_Monthly;
 }
 export type WarsLeaderboard<T extends Timeframe> = LeaderboardVariants[T];

@@ -1,10 +1,4 @@
 import { Timeframe } from "../../enums";
-import {
-    AllTimeLeaderboard,
-    AllTimeStatistics,
-    MonthlyLeaderboard,
-    MonthlyStatistics,
-} from "./default.types";
 
 interface Statistics_BRIDGE {
     xp: number;
@@ -15,23 +9,48 @@ interface Statistics_BRIDGE {
     kills: number;
 }
 
-interface StatisticsAlt_BRIDGE {
+interface Statistics_BRIDGE_AllTime extends Statistics_BRIDGE {
+    UUID: string;
+    first_played: number;
+}
+
+interface Statistics_BRIDGE_Monthly
+    extends Omit<Statistics_BRIDGE, "played" | "victories" | "deaths" | "goals" | "kills"> {
     xp: number;
     m_solo_played: number;
     m_solo_victories: number;
     m_solo_kills: number;
     m_solo_deaths: number;
     m_solo_goals: number;
+
+    index: number;
+    human_index: number;
+    uncapped_xp?: number;
 }
 
 interface StatisticVariants {
-    [Timeframe.AllTime]: Statistics_BRIDGE & AllTimeStatistics;
-    [Timeframe.Monthly]: StatisticsAlt_BRIDGE & MonthlyStatistics;
+    [Timeframe.AllTime]: Statistics_BRIDGE_AllTime;
+    [Timeframe.Monthly]: Statistics_BRIDGE_Monthly;
 }
 export type BridgeStatistics<T extends Timeframe> = StatisticVariants[T];
 
+interface Leaderboard_BRIDGE_AllTime extends Statistics_BRIDGE {
+    index: number;
+    human_index: number;
+    UUID: string;
+    username: string;
+}
+
+interface Leaderboard_BRIDGE_Monthly extends Statistics_BRIDGE {
+    index: number;
+    human_index: number;
+    UUID: string;
+    username: string;
+    uncapped_xp?: number;
+}
+
 interface LeaderboardVariants {
-    [Timeframe.AllTime]: Statistics_BRIDGE & AllTimeLeaderboard;
-    [Timeframe.Monthly]: Statistics_BRIDGE & MonthlyLeaderboard;
+    [Timeframe.AllTime]: Leaderboard_BRIDGE_AllTime;
+    [Timeframe.Monthly]: Leaderboard_BRIDGE_Monthly;
 }
 export type BridgeLeaderboard<T extends Timeframe> = LeaderboardVariants[T];

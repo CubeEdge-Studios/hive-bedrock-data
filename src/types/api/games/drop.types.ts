@@ -1,10 +1,4 @@
 import { Timeframe } from "../../enums";
-import {
-    AllTimeLeaderboard,
-    AllTimeStatistics,
-    MonthlyLeaderboard,
-    MonthlyStatistics,
-} from "./default.types";
 
 interface Statistics_DROP {
     xp: number;
@@ -16,14 +10,34 @@ interface Statistics_DROP {
     vaults_used: number;
 }
 
+interface Statistics_DROP_AllTime extends Statistics_DROP {
+    UUID: string;
+    first_played: number;
+}
+interface Statistics_DROP_Monthly extends Statistics_DROP {
+    index: number;
+    human_index: number;
+    uncapped_xp?: number;
+}
+
 interface StatisticVariants {
-    [Timeframe.AllTime]: Statistics_DROP & AllTimeStatistics;
-    [Timeframe.Monthly]: Statistics_DROP & MonthlyStatistics;
+    [Timeframe.AllTime]: Statistics_DROP_AllTime;
+    [Timeframe.Monthly]: Statistics_DROP_Monthly;
 }
 export type DropStatistics<T extends Timeframe> = StatisticVariants[T];
 
+interface Leaderboard_DROP_AllTime extends Statistics_DROP {
+    UUID: string;
+    first_played: number;
+}
+interface Leaderboard_DROP_Monthly extends Statistics_DROP {
+    index: number;
+    human_index: number;
+    uncapped_xp?: number;
+}
+
 interface LeaderboardVariants {
-    [Timeframe.AllTime]: Statistics_DROP & AllTimeLeaderboard;
-    [Timeframe.Monthly]: Statistics_DROP & MonthlyLeaderboard;
+    [Timeframe.AllTime]: Leaderboard_DROP_AllTime;
+    [Timeframe.Monthly]: Leaderboard_DROP_Monthly;
 }
 export type DropLeaderboard<T extends Timeframe> = LeaderboardVariants[T];

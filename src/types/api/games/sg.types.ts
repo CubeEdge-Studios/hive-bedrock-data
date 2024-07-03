@@ -1,10 +1,4 @@
 import { Timeframe } from "../../enums";
-import {
-    AllTimeLeaderboard,
-    AllTimeStatistics,
-    MonthlyLeaderboard,
-    MonthlyStatistics,
-} from "./default.types";
 
 interface Statistics_SG {
     xp: number;
@@ -20,14 +14,34 @@ interface Statistics_SG {
     flares_used: number;
 }
 
+interface Statistics_SG_AllTime extends Statistics_SG {
+    UUID: string;
+    first_played: number;
+}
+interface Statistics_SG_Monthly extends Statistics_SG {
+    index: number;
+    human_index: number;
+    uncapped_xp?: number;
+}
+
 interface StatisticVariants {
-    [Timeframe.AllTime]: Statistics_SG & AllTimeStatistics;
-    [Timeframe.Monthly]: Statistics_SG & MonthlyStatistics;
+    [Timeframe.AllTime]: Statistics_SG_AllTime;
+    [Timeframe.Monthly]: Statistics_SG_Monthly;
 }
 export type SgStatistics<T extends Timeframe> = StatisticVariants[T];
 
+interface Leaderboard_SG_AllTime extends Statistics_SG {
+    UUID: string;
+    first_played: number;
+}
+interface Leaderboard_SG_Monthly extends Statistics_SG {
+    index: number;
+    human_index: number;
+    uncapped_xp?: number;
+}
+
 interface LeaderboardVariants {
-    [Timeframe.AllTime]: Statistics_SG & AllTimeLeaderboard;
-    [Timeframe.Monthly]: Statistics_SG & MonthlyLeaderboard;
+    [Timeframe.AllTime]: Leaderboard_SG_AllTime;
+    [Timeframe.Monthly]: Leaderboard_SG_Monthly;
 }
 export type SgLeaderboard<T extends Timeframe> = LeaderboardVariants[T];

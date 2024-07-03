@@ -1,10 +1,4 @@
 import { Timeframe } from "../../enums";
-import {
-    AllTimeLeaderboard,
-    AllTimeStatistics,
-    MonthlyLeaderboard,
-    MonthlyStatistics,
-} from "./default.types";
 
 interface Statistics_BUILD {
     xp: number;
@@ -17,14 +11,34 @@ interface Statistics_BUILD {
     rating_love_received: number;
 }
 
+interface Statistics_BUILD_AllTime extends Statistics_BUILD {
+    UUID: string;
+    first_played: number;
+}
+interface Statistics_BUILD_Monthly extends Statistics_BUILD {
+    index: number;
+    human_index: number;
+    uncapped_xp?: number;
+}
+
 interface StatisticVariants {
-    [Timeframe.AllTime]: Statistics_BUILD & AllTimeStatistics;
-    [Timeframe.Monthly]: Statistics_BUILD & MonthlyStatistics;
+    [Timeframe.AllTime]: Statistics_BUILD_AllTime;
+    [Timeframe.Monthly]: Statistics_BUILD_Monthly;
 }
 export type BuildStatistics<T extends Timeframe> = StatisticVariants[T];
 
+interface Leaderboard_BUILD_AllTime extends Statistics_BUILD {
+    UUID: string;
+    first_played: number;
+}
+interface Leaderboard_BUILD_Monthly extends Statistics_BUILD {
+    index: number;
+    human_index: number;
+    uncapped_xp?: number;
+}
+
 interface LeaderboardVariants {
-    [Timeframe.AllTime]: Statistics_BUILD & AllTimeLeaderboard;
-    [Timeframe.Monthly]: Statistics_BUILD & MonthlyLeaderboard;
+    [Timeframe.AllTime]: Leaderboard_BUILD_AllTime;
+    [Timeframe.Monthly]: Leaderboard_BUILD_Monthly;
 }
 export type BuildLeaderboard<T extends Timeframe> = LeaderboardVariants[T];
