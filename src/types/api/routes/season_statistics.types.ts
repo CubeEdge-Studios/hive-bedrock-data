@@ -7,6 +7,8 @@ export type Response_SeasonStatistics<G extends Game> = G extends Game
     : never;
 
 export type Route_SeasonStatistics<T extends string> =
-    T extends `/game/season/player/${infer G extends Game}/${string}/${number}`
-        ? Response_SeasonStatistics<G>
+    T extends `/game/season/player/${infer G}/${string}/${number}`
+        ? G extends Game
+            ? Response_SeasonStatistics<G>
+            : never
         : never;

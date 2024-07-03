@@ -9,8 +9,10 @@ export type Response_SpecificMonthlyStatistics<G extends Game | "all"> = G exten
     : never;
 
 export type Route_SpecificMonthlyStatistics<T extends string> =
-    T extends `/game/monthly/${infer G extends Game | "all"}/${string}/${number}/${number}`
-        ? Response_SpecificMonthlyStatistics<G>
+    T extends `/game/monthly/${infer G}/${string}/${number}/${number}`
+        ? G extends Game | "all"
+            ? Response_SpecificMonthlyStatistics<G>
+            : never
         : never;
 
 interface MonthlyStatisticsBase {
