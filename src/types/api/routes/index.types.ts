@@ -1,19 +1,7 @@
-import {
-    Route_AllTimeLeaderboard,
-    Response_AllTimeLeaderboard,
-} from "./alltime_leaderboard.types";
-import {
-    Response_AllTimeStatistics,
-    Route_AllTimeStatistics,
-} from "./alltime_statistics.types";
-import {
-    Response_MonthlyLeaderboard,
-    Route_MonthlyLeaderboard,
-} from "./monthly_leaderboard.types";
-import {
-    Response_MonthlyStatistics,
-    Route_MonthlyStatistics,
-} from "./monthly_statistics.types";
+import { Route_AllTimeLeaderboard, Response_AllTimeLeaderboard } from "./alltime_leaderboard.types";
+import { Response_AllTimeStatistics, Route_AllTimeStatistics } from "./alltime_statistics.types";
+import { Response_MonthlyLeaderboard, Route_MonthlyLeaderboard } from "./monthly_leaderboard.types";
+import { Response_MonthlyStatistics, Route_MonthlyStatistics } from "./monthly_statistics.types";
 import {
     Response_SpecificMonthlyLeaderboard,
     Route_SpecificMonthlyLeaderboard,
@@ -24,10 +12,9 @@ import {
 } from "./specific_monthly_statistics.types";
 import { Response_GameMaps, Route_GameMaps } from "./game_maps.types";
 import { Response_GameMetdata, Route_GameMetdata } from "./game_metadata.types";
-import {
-    Response_GlobalStatistics,
-    Route_GlobalStatistics,
-} from "./global_statistics.types";
+import { Response_GlobalStatistics, Route_GlobalStatistics } from "./global_statistics.types";
+import { Route_SeasonLeaderboard, Response_SeasonLeaderboard } from "./season_leaderboard.types";
+import { Route_SeasonStatistics, Response_SeasonStatistics } from "./season_statistics.types";
 
 export type Routes<T extends string> =
     | Route_AllTimeLeaderboard<T>
@@ -38,7 +25,9 @@ export type Routes<T extends string> =
     | Route_MonthlyLeaderboard<T>
     | Route_MonthlyStatistics<T>
     | Route_SpecificMonthlyLeaderboard<T>
-    | Route_SpecificMonthlyStatistics<T>;
+    | Route_SpecificMonthlyStatistics<T>
+    | Route_SeasonLeaderboard<T>
+    | Route_SeasonStatistics<T>;
 
 export {
     Response_AllTimeLeaderboard,
@@ -50,4 +39,6 @@ export {
     Response_MonthlyStatistics,
     Response_SpecificMonthlyLeaderboard,
     Response_SpecificMonthlyStatistics,
+    Response_SeasonLeaderboard,
+    Response_SeasonStatistics,
 };

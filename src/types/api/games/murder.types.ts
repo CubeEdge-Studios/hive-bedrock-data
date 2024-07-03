@@ -1,10 +1,4 @@
 import { Timeframe } from "../../enums";
-import {
-    AllTimeLeaderboard,
-    AllTimeStatistics,
-    MonthlyLeaderboard,
-    MonthlyStatistics,
-} from "./default.types";
 
 interface Statistics_MURDER {
     xp: number;
@@ -17,14 +11,34 @@ interface Statistics_MURDER {
     prestige: number;
 }
 
+interface Statistics_MURDER_AllTime extends Statistics_MURDER {
+    UUID: string;
+    first_played: number;
+}
+interface Statistics_MURDER_Monthly extends Statistics_MURDER {
+    index: number;
+    human_index: number;
+    uncapped_xp?: number;
+}
+
 interface StatisticVariants {
-    [Timeframe.AllTime]: Statistics_MURDER & AllTimeStatistics;
-    [Timeframe.Monthly]: Statistics_MURDER & MonthlyStatistics;
+    [Timeframe.AllTime]: Statistics_MURDER_AllTime;
+    [Timeframe.Monthly]: Statistics_MURDER_Monthly;
 }
 export type MurderStatistics<T extends Timeframe> = StatisticVariants[T];
 
+interface Leaderboard_MURDER_AllTime extends Statistics_MURDER {
+    UUID: string;
+    first_played: number;
+}
+interface Leaderboard_MURDER_Monthly extends Statistics_MURDER {
+    index: number;
+    human_index: number;
+    uncapped_xp?: number;
+}
+
 interface LeaderboardVariants {
-    [Timeframe.AllTime]: Statistics_MURDER & AllTimeLeaderboard;
-    [Timeframe.Monthly]: Statistics_MURDER & MonthlyLeaderboard;
+    [Timeframe.AllTime]: Leaderboard_MURDER_AllTime;
+    [Timeframe.Monthly]: Leaderboard_MURDER_Monthly;
 }
 export type MurderLeaderboard<T extends Timeframe> = LeaderboardVariants[T];

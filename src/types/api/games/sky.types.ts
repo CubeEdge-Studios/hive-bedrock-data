@@ -1,10 +1,4 @@
 import { Timeframe } from "../../enums";
-import {
-    AllTimeLeaderboard,
-    AllTimeStatistics,
-    MonthlyLeaderboard,
-    MonthlyStatistics,
-} from "./default.types";
 
 interface Statistics_SKY {
     xp: number;
@@ -17,14 +11,34 @@ interface Statistics_SKY {
     spells_used: number;
 }
 
+interface Statistics_SKY_AllTime extends Statistics_SKY {
+    UUID: string;
+    first_played: number;
+}
+interface Statistics_SKY_Monthly extends Statistics_SKY {
+    index: number;
+    human_index: number;
+    uncapped_xp?: number;
+}
+
 interface StatisticVariants {
-    [Timeframe.AllTime]: Statistics_SKY & AllTimeStatistics;
-    [Timeframe.Monthly]: Statistics_SKY & MonthlyStatistics;
+    [Timeframe.AllTime]: Statistics_SKY_AllTime;
+    [Timeframe.Monthly]: Statistics_SKY_Monthly;
 }
 export type SkyStatistics<T extends Timeframe> = StatisticVariants[T];
 
+interface Leaderboard_SKY_AllTime extends Statistics_SKY {
+    UUID: string;
+    first_played: number;
+}
+interface Leaderboard_SKY_Monthly extends Statistics_SKY {
+    index: number;
+    human_index: number;
+    uncapped_xp?: number;
+}
+
 interface LeaderboardVariants {
-    [Timeframe.AllTime]: Statistics_SKY & AllTimeLeaderboard;
-    [Timeframe.Monthly]: Statistics_SKY & MonthlyLeaderboard;
+    [Timeframe.AllTime]: Leaderboard_SKY_AllTime;
+    [Timeframe.Monthly]: Leaderboard_SKY_Monthly;
 }
 export type SkyLeaderboard<T extends Timeframe> = LeaderboardVariants[T];

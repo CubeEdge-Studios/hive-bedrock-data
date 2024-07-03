@@ -1,10 +1,4 @@
 import { Timeframe } from "../../enums";
-import {
-    AllTimeLeaderboard,
-    AllTimeStatistics,
-    MonthlyLeaderboard,
-    MonthlyStatistics,
-} from "./default.types";
 
 interface Statistics_GRAV {
     xp: number;
@@ -15,14 +9,34 @@ interface Statistics_GRAV {
     maps_completed_without_dying: number;
 }
 
+interface Statistics_GRAV_AllTime extends Statistics_GRAV {
+    UUID: string;
+    first_played: number;
+}
+interface Statistics_GRAV_Monthly extends Statistics_GRAV {
+    index: number;
+    human_index: number;
+    uncapped_xp?: number;
+}
+
 interface StatisticVariants {
-    [Timeframe.AllTime]: Statistics_GRAV & AllTimeStatistics;
-    [Timeframe.Monthly]: Statistics_GRAV & MonthlyStatistics;
+    [Timeframe.AllTime]: Statistics_GRAV_AllTime;
+    [Timeframe.Monthly]: Statistics_GRAV_Monthly;
 }
 export type GravStatistics<T extends Timeframe> = StatisticVariants[T];
 
+interface Leaderboard_GRAV_AllTime extends Statistics_GRAV {
+    UUID: string;
+    first_played: number;
+}
+interface Leaderboard_GRAV_Monthly extends Statistics_GRAV {
+    index: number;
+    human_index: number;
+    uncapped_xp?: number;
+}
+
 interface LeaderboardVariants {
-    [Timeframe.AllTime]: Statistics_GRAV & AllTimeLeaderboard;
-    [Timeframe.Monthly]: Statistics_GRAV & MonthlyLeaderboard;
+    [Timeframe.AllTime]: Leaderboard_GRAV_AllTime;
+    [Timeframe.Monthly]: Leaderboard_GRAV_Monthly;
 }
 export type GravLeaderboard<T extends Timeframe> = LeaderboardVariants[T];

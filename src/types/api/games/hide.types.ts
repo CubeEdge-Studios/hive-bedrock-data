@@ -1,10 +1,4 @@
 import { Timeframe } from "../../enums";
-import {
-    AllTimeLeaderboard,
-    AllTimeStatistics,
-    MonthlyLeaderboard,
-    MonthlyStatistics,
-} from "./default.types";
 
 interface Statistics_HIDE {
     xp: number;
@@ -15,14 +9,34 @@ interface Statistics_HIDE {
     seeker_kills: number;
 }
 
+interface Statistics_HIDE_AllTime extends Statistics_HIDE {
+    UUID: string;
+    first_played: number;
+}
+interface Statistics_HIDE_Monthly extends Statistics_HIDE {
+    index: number;
+    human_index: number;
+    uncapped_xp?: number;
+}
+
 interface StatisticVariants {
-    [Timeframe.AllTime]: Statistics_HIDE & AllTimeStatistics;
-    [Timeframe.Monthly]: Statistics_HIDE & MonthlyStatistics;
+    [Timeframe.AllTime]: Statistics_HIDE_AllTime;
+    [Timeframe.Monthly]: Statistics_HIDE_Monthly;
 }
 export type HideStatistics<T extends Timeframe> = StatisticVariants[T];
 
+interface Leaderboard_HIDE_AllTime extends Statistics_HIDE {
+    UUID: string;
+    first_played: number;
+}
+interface Leaderboard_HIDE_Monthly extends Statistics_HIDE {
+    index: number;
+    human_index: number;
+    uncapped_xp?: number;
+}
+
 interface LeaderboardVariants {
-    [Timeframe.AllTime]: Statistics_HIDE & AllTimeLeaderboard;
-    [Timeframe.Monthly]: Statistics_HIDE & MonthlyLeaderboard;
+    [Timeframe.AllTime]: Leaderboard_HIDE_AllTime;
+    [Timeframe.Monthly]: Leaderboard_HIDE_Monthly;
 }
 export type HideLeaderboard<T extends Timeframe> = LeaderboardVariants[T];
