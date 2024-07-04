@@ -18,6 +18,7 @@ interface Statistics_GROUND_AllTime extends Statistics_GROUND {
 interface Statistics_GROUND_Monthly extends Statistics_GROUND {
     index: number;
     human_index: number;
+    username: string;
     uncapped_xp?: number;
 }
 

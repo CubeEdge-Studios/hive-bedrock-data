@@ -18,6 +18,7 @@ interface Statistics_MURDER_AllTime extends Statistics_MURDER {
 interface Statistics_MURDER_Monthly extends Statistics_MURDER {
     index: number;
     human_index: number;
+    username: string;
     uncapped_xp?: number;
 }
 

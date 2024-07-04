@@ -18,6 +18,7 @@ interface Statistics_WARS_AllTime extends Statistics_WARS {
 interface Statistics_WARS_Monthly extends Statistics_WARS {
     index: number;
     human_index: number;
+    username: string;
     uncapped_xp?: number;
 }
 

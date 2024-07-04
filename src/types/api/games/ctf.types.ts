@@ -18,6 +18,7 @@ interface Statistics_CTF_AllTime extends Statistics_CTF {
 interface Statistics_CTF_Monthly extends Statistics_CTF {
     index: number;
     human_index: number;
+    username: string;
     uncapped_xp?: number;
 }
 

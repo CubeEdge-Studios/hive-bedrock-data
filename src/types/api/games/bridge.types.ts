@@ -25,6 +25,7 @@ interface Statistics_BRIDGE_Monthly
 
     index: number;
     human_index: number;
+    username: string;
     uncapped_xp?: number;
 }
 

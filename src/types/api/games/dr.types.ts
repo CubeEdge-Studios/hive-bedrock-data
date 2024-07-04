@@ -17,6 +17,7 @@ interface Statistics_DR_AllTime extends Statistics_DR {
 interface Statistics_DR_Monthly extends Statistics_DR {
     index: number;
     human_index: number;
+    username: string;
     uncapped_xp?: number;
 }
 

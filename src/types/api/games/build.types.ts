@@ -18,6 +18,7 @@ interface Statistics_BUILD_AllTime extends Statistics_BUILD {
 interface Statistics_BUILD_Monthly extends Statistics_BUILD {
     index: number;
     human_index: number;
+    username: string;
     uncapped_xp?: number;
 }
 

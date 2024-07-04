@@ -17,6 +17,7 @@ interface Statistics_DROP_AllTime extends Statistics_DROP {
 interface Statistics_DROP_Monthly extends Statistics_DROP {
     index: number;
     human_index: number;
+    username: string;
     uncapped_xp?: number;
 }
 

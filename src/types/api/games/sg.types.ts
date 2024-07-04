@@ -21,6 +21,7 @@ interface Statistics_SG_AllTime extends Statistics_SG {
 interface Statistics_SG_Monthly extends Statistics_SG {
     index: number;
     human_index: number;
+    username: string;
     uncapped_xp?: number;
 }
 

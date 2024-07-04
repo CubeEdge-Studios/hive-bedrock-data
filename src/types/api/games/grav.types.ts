@@ -16,6 +16,7 @@ interface Statistics_GRAV_AllTime extends Statistics_GRAV {
 interface Statistics_GRAV_Monthly extends Statistics_GRAV {
     index: number;
     human_index: number;
+    username: string;
     uncapped_xp?: number;
 }
 

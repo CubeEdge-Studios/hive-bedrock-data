@@ -15,6 +15,7 @@ interface Statistics_PARTY_AllTime extends Statistics_PARTY {
 interface Statistics_PARTY_Monthly extends Statistics_PARTY {
     index: number;
     human_index: number;
+    username: string;
     uncapped_xp?: number;
 }
 

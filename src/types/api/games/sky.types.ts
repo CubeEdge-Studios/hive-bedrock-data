@@ -18,6 +18,7 @@ interface Statistics_SKY_AllTime extends Statistics_SKY {
 interface Statistics_SKY_Monthly extends Statistics_SKY {
     index: number;
     human_index: number;
+    username: string;
     uncapped_xp?: number;
 }
 

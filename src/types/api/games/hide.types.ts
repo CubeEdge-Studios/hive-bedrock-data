@@ -16,6 +16,7 @@ interface Statistics_HIDE_AllTime extends Statistics_HIDE {
 interface Statistics_HIDE_Monthly extends Statistics_HIDE {
     index: number;
     human_index: number;
+    username: string;
     uncapped_xp?: number;
 }
 
