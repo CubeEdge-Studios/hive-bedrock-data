@@ -31,12 +31,16 @@ interface StatisticVariants {
 export type SgStatistics<T extends Timeframe> = StatisticVariants[T];
 
 interface Leaderboard_SG_AllTime extends Statistics_SG {
+    index: number;
+    human_index: number;
+    username: number;
     UUID: string;
-    first_played: number;
 }
 interface Leaderboard_SG_Monthly extends Statistics_SG {
     index: number;
     human_index: number;
+    username: number;
+    UUID: string;
     uncapped_xp?: number;
 }
 

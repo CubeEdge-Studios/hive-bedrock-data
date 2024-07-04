@@ -28,12 +28,16 @@ interface StatisticVariants {
 export type SkyStatistics<T extends Timeframe> = StatisticVariants[T];
 
 interface Leaderboard_SKY_AllTime extends Statistics_SKY {
+    index: number;
+    human_index: number;
+    username: number;
     UUID: string;
-    first_played: number;
 }
 interface Leaderboard_SKY_Monthly extends Statistics_SKY {
     index: number;
     human_index: number;
+    username: number;
+    UUID: string;
     uncapped_xp?: number;
 }
 

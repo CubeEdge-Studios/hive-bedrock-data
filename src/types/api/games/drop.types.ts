@@ -27,12 +27,16 @@ interface StatisticVariants {
 export type DropStatistics<T extends Timeframe> = StatisticVariants[T];
 
 interface Leaderboard_DROP_AllTime extends Statistics_DROP {
+    index: number;
+    human_index: number;
+    username: number;
     UUID: string;
-    first_played: number;
 }
 interface Leaderboard_DROP_Monthly extends Statistics_DROP {
     index: number;
     human_index: number;
+    username: number;
+    UUID: string;
     uncapped_xp?: number;
 }
 

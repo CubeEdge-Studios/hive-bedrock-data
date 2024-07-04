@@ -17,6 +17,7 @@ interface Statistics_BED_AllTime extends Statistics_BED {
 interface Statistics_BED_Monthly extends Statistics_BED {
     index: number;
     human_index: number;
+    username: number;
     uncapped_xp?: number;
 }
 
@@ -27,12 +28,16 @@ interface StatisticVariants {
 export type BedStatistics<T extends Timeframe> = StatisticVariants[T];
 
 interface Leaderboard_BED_AllTime extends Statistics_BED {
+    index: number;
+    human_index: number;
+    username: number;
     UUID: string;
-    first_played: number;
 }
 interface Leaderboard_BED_Monthly extends Statistics_BED {
     index: number;
     human_index: number;
+    username: number;
+    UUID: string;
     uncapped_xp?: number;
 }
 

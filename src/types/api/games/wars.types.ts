@@ -28,12 +28,16 @@ interface StatisticVariants {
 export type WarsStatistics<T extends Timeframe> = StatisticVariants[T];
 
 interface Leaderboard_WARS_AllTime extends Statistics_WARS {
+    index: number;
+    human_index: number;
+    username: number;
     UUID: string;
-    first_played: number;
 }
 interface Leaderboard_WARS_Monthly extends Statistics_WARS {
     index: number;
     human_index: number;
+    username: number;
+    UUID: string;
     uncapped_xp?: number;
 }
 

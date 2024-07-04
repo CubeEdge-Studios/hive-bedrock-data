@@ -28,12 +28,16 @@ interface StatisticVariants {
 export type CtfStatistics<T extends Timeframe> = StatisticVariants[T];
 
 interface Leaderboard_CTF_AllTime extends Statistics_CTF {
+    index: number;
+    human_index: number;
+    username: number;
     UUID: string;
-    first_played: number;
 }
 interface Leaderboard_CTF_Monthly extends Statistics_CTF {
     index: number;
     human_index: number;
+    username: number;
+    UUID: string;
     uncapped_xp?: number;
 }
 

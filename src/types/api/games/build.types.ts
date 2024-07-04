@@ -28,12 +28,16 @@ interface StatisticVariants {
 export type BuildStatistics<T extends Timeframe> = StatisticVariants[T];
 
 interface Leaderboard_BUILD_AllTime extends Statistics_BUILD {
+    index: number;
+    human_index: number;
+    username: number;
     UUID: string;
-    first_played: number;
 }
 interface Leaderboard_BUILD_Monthly extends Statistics_BUILD {
     index: number;
     human_index: number;
+    username: number;
+    UUID: string;
     uncapped_xp?: number;
 }
 

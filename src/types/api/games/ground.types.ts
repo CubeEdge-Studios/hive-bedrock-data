@@ -28,12 +28,16 @@ interface StatisticVariants {
 export type GroundStatistics<T extends Timeframe> = StatisticVariants[T];
 
 interface Leaderboard_GROUND_AllTime extends Statistics_GROUND {
+    index: number;
+    human_index: number;
+    username: number;
     UUID: string;
-    first_played: number;
 }
 interface Leaderboard_GROUND_Monthly extends Statistics_GROUND {
     index: number;
     human_index: number;
+    username: number;
+    UUID: string;
     uncapped_xp?: number;
 }
 

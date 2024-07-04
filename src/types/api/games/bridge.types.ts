@@ -37,15 +37,15 @@ export type BridgeStatistics<T extends Timeframe> = StatisticVariants[T];
 interface Leaderboard_BRIDGE_AllTime extends Statistics_BRIDGE {
     index: number;
     human_index: number;
+    username: number;
     UUID: string;
-    username: string;
 }
 
 interface Leaderboard_BRIDGE_Monthly extends Statistics_BRIDGE {
     index: number;
     human_index: number;
+    username: number;
     UUID: string;
-    username: string;
     uncapped_xp?: number;
 }
 

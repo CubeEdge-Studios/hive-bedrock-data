@@ -26,12 +26,16 @@ interface StatisticVariants {
 export type GravStatistics<T extends Timeframe> = StatisticVariants[T];
 
 interface Leaderboard_GRAV_AllTime extends Statistics_GRAV {
+    index: number;
+    human_index: number;
+    username: number;
     UUID: string;
-    first_played: number;
 }
 interface Leaderboard_GRAV_Monthly extends Statistics_GRAV {
     index: number;
     human_index: number;
+    username: number;
+    UUID: string;
     uncapped_xp?: number;
 }
 

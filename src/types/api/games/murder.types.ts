@@ -28,12 +28,16 @@ interface StatisticVariants {
 export type MurderStatistics<T extends Timeframe> = StatisticVariants[T];
 
 interface Leaderboard_MURDER_AllTime extends Statistics_MURDER {
+    index: number;
+    human_index: number;
+    username: number;
     UUID: string;
-    first_played: number;
 }
 interface Leaderboard_MURDER_Monthly extends Statistics_MURDER {
     index: number;
     human_index: number;
+    username: number;
+    UUID: string;
     uncapped_xp?: number;
 }
 

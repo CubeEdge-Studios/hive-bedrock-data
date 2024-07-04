@@ -25,12 +25,16 @@ interface StatisticVariants {
 export type PartyStatistics<T extends Timeframe> = StatisticVariants[T];
 
 interface Leaderboard_PARTY_AllTime extends Statistics_PARTY {
+    index: number;
+    human_index: number;
+    username: number;
     UUID: string;
-    first_played: number;
 }
 interface Leaderboard_PARTY_Monthly extends Statistics_PARTY {
     index: number;
     human_index: number;
+    username: number;
+    UUID: string;
     uncapped_xp?: number;
 }
 

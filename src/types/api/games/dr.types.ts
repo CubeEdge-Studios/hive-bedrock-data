@@ -27,12 +27,16 @@ interface StatisticVariants {
 export type DrStatistics<T extends Timeframe> = StatisticVariants[T];
 
 interface Leaderboard_DR_AllTime extends Statistics_DR {
+    index: number;
+    human_index: number;
+    username: number;
     UUID: string;
-    first_played: number;
 }
 interface Leaderboard_DR_Monthly extends Statistics_DR {
     index: number;
     human_index: number;
+    username: number;
+    UUID: string;
     uncapped_xp?: number;
 }
 
