@@ -12,7 +12,7 @@ export default {
     icon_url: IMAGE_CDN + "/icons/hub/games/sg.png",
 
     has_levels: true,
-    max_level: 30,
+    max_level: 50,
     can_prestige: false,
     max_prestige: null,
     level_increment: 150,
