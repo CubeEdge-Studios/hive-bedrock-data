@@ -1,7 +1,7 @@
 import { Games } from "../games";
 import { Game } from "../types/games.types";
 
-export default function calculateLevelFromXP(xp: number, game_id: Game): number | null {
+export function _calculateLevelFromXP(xp: number, game_id: Game): number | null {
     const game_data = Games[game_id];
     if (!game_data) return null;
 
@@ -47,9 +47,6 @@ export default function calculateLevelFromXP(xp: number, game_id: Game): number 
         (level_increment + Math.sqrt(level_increment * (level_increment + 4 * xp))) /
         (2 * level_increment); // Calculate the level without the level cap
 
-    if (level < 1) return 1;
-    if (level > game_data.max_level) return game_data.max_level;
-
     if (!level_cap || level <= level_cap) return Math.floor(level * 100) / 100; // Return if there is no level cap or the level dosen't reach the level cap
 
     let level_with_cap =
@@ -57,8 +54,18 @@ export default function calculateLevelFromXP(xp: number, game_id: Game): number 
         (xp - (level_increment * Math.pow(level_cap - 1, 2) + (level_cap - 1) * level_increment)) /
             ((level_cap - 1) * level_increment * 2); // The level is larger than the cap so the excess xp is removed and a level is calculated
 
-    if (level_with_cap < 1) return 1;
-    if (level_with_cap > game_data.max_level) return game_data.max_level;
-
     return Math.floor(level_with_cap * 100) / 100;
+}
+
+export default function calculateLevelFromXP(xp: number, game_id: Game): number | null {
+    const game = Games[game_id];
+    if (!game) return null;
+
+    let level = _calculateLevelFromXP(xp, game_id);
+    if (!level) return null;
+
+    if (level < 1) return 1;
+    if (level > game.max_level) return game.max_level;
+
+    return _calculateLevelFromXP(xp, game_id);
 }
