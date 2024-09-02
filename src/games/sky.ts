@@ -11,7 +11,7 @@ export default {
     icon_url: IMAGE_CDN + "/icons/hub/games/sky.png",
 
     has_levels: true,
-    max_level: 75,
+    max_level: 100,
     can_prestige: false,
     max_prestige: null,
     level_increment: 150,
