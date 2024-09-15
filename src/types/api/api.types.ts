@@ -44,7 +44,7 @@ interface AllLeaderboards<T extends Timeframe> {
     [Game.MurderMystery]: API.MurderLeaderboard<T>;
     [Game.Skywars]: API.SkyLeaderboard<T>;
     [Game.SkywarsKits]: never;
-    [Game.SkywarsClassic]: never
+    [Game.SkywarsClassic]: never;
     [Game.SurvivalGames]: API.SgLeaderboard<T>;
     [Game.TheBridge]: API.BridgeLeaderboard<T>;
     [Game.TreasureWars]: API.WarsLeaderboard<T>;
