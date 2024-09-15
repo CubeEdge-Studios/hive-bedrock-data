@@ -14,6 +14,8 @@ import murder from "./murder";
 import party from "./party";
 import sg from "./sg";
 import sky from "./sky";
+import skykits from "./sky-kits";
+import skyclassic from "./sky-classic";
 import wars from "./wars";
 import bed from "./bed";
 import parkour from "./parkour";
@@ -29,6 +31,8 @@ export const Games = {
     [Game.JustBuild]: build,
     [Game.MurderMystery]: murder,
     [Game.Skywars]: sky,
+    [Game.SkywarsKits]: skykits,
+    [Game.SkywarsClassic]: skyclassic,
     [Game.SurvivalGames]: sg,
     [Game.TheBridge]: bridge,
     [Game.TreasureWars]: wars,

@@ -5,6 +5,8 @@ export enum Game {
     MurderMystery = "murder",
     SurvivalGames = "sg",
     Skywars = "sky",
+    SkywarsKits = "sky-kits",
+    SkywarsClassic = "sky-classic",
     CaptureTheFlag = "ctf",
     BlockDrop = "drop",
     GroundWars = "ground",

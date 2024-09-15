@@ -21,6 +21,8 @@ interface AllStatistics<T extends Timeframe> {
     [Game.JustBuild]: API.BuildStatistics<T>;
     [Game.MurderMystery]: API.MurderStatistics<T>;
     [Game.Skywars]: API.SkyStatistics<T>;
+    [Game.SkywarsKits]: API.SkyKitsStatistics<T>;
+    [Game.SkywarsClassic]: API.SkyClassicStatistics<T>;
     [Game.SurvivalGames]: API.SgStatistics<T>;
     [Game.TheBridge]: API.BridgeStatistics<T>;
     [Game.TreasureWars]: API.WarsStatistics<T>;
@@ -41,6 +43,8 @@ interface AllLeaderboards<T extends Timeframe> {
     [Game.JustBuild]: API.BuildLeaderboard<T>;
     [Game.MurderMystery]: API.MurderLeaderboard<T>;
     [Game.Skywars]: API.SkyLeaderboard<T>;
+    [Game.SkywarsKits]: never;
+    [Game.SkywarsClassic]: never;
     [Game.SurvivalGames]: API.SgLeaderboard<T>;
     [Game.TheBridge]: API.BridgeLeaderboard<T>;
     [Game.TreasureWars]: API.WarsLeaderboard<T>;
