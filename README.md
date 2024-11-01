@@ -1,3 +1,6 @@
+> [!NOTE]
+> This package is now managed in a different repository. https://github.com/CubeEdge-Studios/hive-bedrock
+
 # Hive Bedrock Data
 
 A repo to store and calculate data and type definitions from The Hive: Bedrock Edition server. This includes infomation for each game avaliable on the server, helper functions to calulate different game statistic infomation and type definitions for the public API.
